@@ -1,0 +1,25 @@
+<AgentCofig>
+	
+	<Agent agentClassname="TableElementAgent" isReplicate="true" netUpdate="100">
+		<AgentComponent name="AgentSystemExtension.AgentComponent_Creator"/>
+        <AgentComponent name="AgentSystemExtension.AgentComponent_Transform"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabChangeModel"/>
+		
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabHighlighter"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabLeap"/>
+
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveClickEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveDragEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveDoubleClickEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractivePointMoveEx"/>
+		
+		<AgentComponent name="AgentSystemExtension.AgentComponent_UIData"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabBestCameraAngle"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveCommon"/> 
+         <AgentComponent name="AgentSystemExtension.AgentComponent_CursorRegister"/>
+
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabParentAdsorb"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabLinkRelation"/>
+	</Agent>
+	
+</AgentCofig>

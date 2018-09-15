@@ -1,0 +1,12 @@
+{
+	"LabObjectType": 2018915,
+	"ObjName": "桌子",
+	"CanDelete": true,
+	"State": 0,
+	"ValueParas": [
+		
+	],
+	"Classificate": "Magnetism",
+	"LuaAgent": "TableElementAgent",
+	"NumberName": ""
+}
