@@ -1,0 +1,12 @@
+{
+	"LabObjectType": 19999,
+	"ObjName": "宝箱",
+	"CanDelete": true,
+	"State": 0,
+	"ValueParas": [
+		
+	],
+	"Classificate": "Circuit",
+	"LuaAgent": "BoxDemoAgent",
+	"NumberName": ""
+}
