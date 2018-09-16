@@ -105,7 +105,6 @@ function BoxDemoAgent:InitData(paramsTable)
 	--电阻
 	self.CiruiteElementSet:InitType("ResistorAction")
 	self.CiruiteElementSet:AddComponent("ResistorAction", Resistor1)
-	self.CiruiteElementSet:AddComponent("ResistorAction", Resistor2)
 
 	--电源
 	local tPowerAcId = self.CiruiteElementSet:GetPortIDs(PowerAcId)
@@ -124,14 +123,24 @@ function BoxDemoAgent:InitData(paramsTable)
 	--电阻1
 	local tResistor1 = self.CiruiteElementSet:GetPortIDs(Resistor1)
 	tResistor1 = CSArrayToLuaArray(tResistor1,2)
-	--电阻2
-	local tResistor2 = self.CiruiteElementSet:GetPortIDs(Resistor2)
-	tResistor2 = CSArrayToLuaArray(tResistor2,2)
 
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId1[1])	--电源负极跟开关一端相连
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId2[1])	--电源负极跟开关一端相连
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[2],SwitchId1,tSwitchId3[2])	--电源正极跟开关一端相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId1[2])	--电源负极跟开关一端相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId2[2])	--电源负极跟开关一端相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[2],SwitchId1,tSwitchId3[1])	--电源正极跟开关一端相连
 
+	self.portTable = {  { ["id"] = Resistor1, ["port"] = tResistor1[1] },
+						{ ["id"] = Resistor1, ["port"] = tResistor1[2] },
+						{ ["id"] = tSwitchId1, ["port"] = tSwitchId1[1] },
+						{ ["id"] = tSwitchId3, ["port"] = tSwitchId2[2] },
+					 }
+
+	self.tSwitchId1 = tSwitchId1
+	self.tSwitchId2 = tSwitchId2
+	self.tSwitchId3 = tSwitchId3
+
+	self.CiruiteElementSet:Set(tostring(tSwitchId1), "isOpen", false)
+	self.CiruiteElementSet:Set(tostring(tSwitchId2), "isOpen", false)
+	self.CiruiteElementSet:Set(tostring(tSwitchId3), "isOpen", false)
 	--初始化场景对象
 	-- self:LBABaseInit(paramsTable)
 end
@@ -150,14 +159,36 @@ function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strPa
 		end
 	end
 	
-	if objPath == self.ModelPath["A"] or objPath == self.ModelPath["B"] or objPath == self.ModelPath["C"] then
+	if objPath == self.ModelPath["A"] then
 		local pos = self.Transform:GetChildEulerAngles(objPath,true)
 		if pos.y >= 1 then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.tSwitchId1), "isOpen", false)
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.tSwitchId1), "isOpen", true)
 		end
-		print("    按钮调试    ")
+		print("    按钮调试 A   ")
+	elseif objPath == self.ModelPath["B"] then
+		local pos = self.Transform:GetChildEulerAngles(objPath,true)
+		if pos.y >= 1 then
+			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.tSwitchId2), "isOpen", false)
+		else
+			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.tSwitchId2), "isOpen", true)
+		end
+		print("    按钮调试  B  ")
+	elseif objPath == self.ModelPath["C"] then
+		local pos = self.Transform:GetChildEulerAngles(objPath,true)
+		if pos.y >= 1 then
+			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.tSwitchId3), "isOpen", false)
+		else
+			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.tSwitchId3), "isOpen", true)
+		end
+		print("    按钮调试 C   ")
 	end
 end
 
@@ -202,6 +233,19 @@ end
 function BoxDemoAgent:InitChildLink(entityId)
 	local linkId = self.VLabLinkRelation:CreateChildLink(EmptyChildPath)
 	self:SaveAbsorbLinkData(AbsorbLinkPartType.Child,EmptyChildPath,linkId)
+end
+
+--吸附
+function BoxDemoAgent:OnChildAbsorbCallback()
+	local element = LabElementManager.GetElement(otherId)
+	if element.elementType == CircuitElementType.TableElement then
+		 element:LinkToTable(self, self.portTable)
+		 print( " 宝箱传递电阻正负极，开关1负极，开关3正极 " )
+	end
+end
+--取消吸附
+function BoxDemoAgent:OnChildCancleAbsorbCallback()
+
 end
 
 
