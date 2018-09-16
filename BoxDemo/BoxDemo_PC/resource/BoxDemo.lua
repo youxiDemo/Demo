@@ -126,14 +126,14 @@ function BoxDemoAgent:InitData(paramsTable)
 	tResistor1 = CSArrayToLuaArray(tResistor1,2)
 
 	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId1[2])	--电源负极跟开关1正极相连
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId2[2])	--电源负极跟开关2正极端相连
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[2],SwitchId1,tSwitchId3[1])	--电源正极跟开关3负极端相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId2,tSwitchId2[2])	--电源负极跟开关2正极端相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[2],SwitchId3,tSwitchId3[1])	--电源正极跟开关3负极端相连
 	self:WirePostEngineLink(SwitchId2,tSwitchId2[1],SwitchId3,tSwitchId3[2])	--开关2负极跟开关3正极极端相连
 
 	self.portTable = {  { ["id"] = Resistor1, ["port"] = tResistor1[1] },
 						{ ["id"] = Resistor1, ["port"] = tResistor1[2] },
 						{ ["id"] = tSwitchId1, ["port"] = tSwitchId1[1] },
-						{ ["id"] = tSwitchId3, ["port"] = tSwitchId2[2] },
+						{ ["id"] = tSwitchId3, ["port"] = tSwitchId3[2] },
 					 }
 
 	self.tSwitchId1 = tSwitchId1
@@ -214,17 +214,19 @@ function BoxDemoAgent:ITween()
 end
 
 -- 重写基类移动回调
--- function BoxDemoAgent:OnEntireMove(objPath,eventType,WorldPos,offset,isFocus,linkMoveInfo)
--- 	local bValue = (linkMoveInfo == "" or linkMoveInfo == nil) and true or false
--- 	if not(bValue) then -- 被带动移动时，直接return
--- 		return
--- 	end
--- 	self:LBABaseInteractiveMove(objPath,eventType,WorldPos,offset,isFocus)
--- 	if eventType == "BeginMove" then	
--- 	elseif eventType == "Moving" then	
--- 	elseif eventType == "EndMove" then	
--- 	end
--- end
+function BoxDemoAgent:OnEntireMove(objPath,eventType,WorldPos,offset,isFocus,linkMoveInfo)
+	local bValue = (linkMoveInfo == "" or linkMoveInfo == nil) and true or false
+	if not(bValue) then -- 被带动移动时，直接return
+		return
+	end
+	self:LBABaseInteractiveMove(objPath,eventType,WorldPos,offset,isFocus)
+	if eventType == "BeginMove" then	
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,true)
+	elseif eventType == "Moving" then	
+	elseif eventType == "EndMove" then
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,false)
+	end
+end
 
 -- 初始化子吸附
 function BoxDemoAgent:InitChildAbsord(entityId)   
