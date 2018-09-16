@@ -95,6 +95,7 @@ function BoxDemoAgent:InitData(paramsTable)
 	--和引擎能力 Component 绑定
 	self.CiruiteElementSet:InitType("PowerAction")
 	self.CiruiteElementSet:AddComponent("PowerAction", PowerAcId)
+	self.CiruiteElementSet:Set(tostring(PowerAcId),"Voltage",3)
 
 	--开关
 	self.CiruiteElementSet:InitType("SwitchAction")
