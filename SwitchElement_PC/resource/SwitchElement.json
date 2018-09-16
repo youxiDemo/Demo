@@ -1,0 +1,9 @@
+{
+  "LabObjectType": 1179648,
+  "ObjName": "单刀单掷开关",
+  "CanDelete": true,
+  "State": 0,
+  "Classificate": "Circuit",
+  "LuaAgent": "SwitchSPSTAgent",
+  "NumberName": "S"
+}

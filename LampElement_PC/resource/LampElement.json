@@ -1,0 +1,44 @@
+{
+  "LabObjectType": 1249280,
+  "ObjName": "小灯泡",
+  "CanDelete": true,
+  "State": 0,
+  "ValueParas": [
+    {
+      "ParaKey": "FRatedPower",
+      "ParaName": "额定功率",
+      "ParaType": "DropDownBox",
+      "Editable": true,
+      "IsTriggerSave": true,
+      "PostName": "W",
+      "DisplayValue": 3.6,
+      "TypeValue": [
+        0.5,
+        0.75,
+        0.9,
+        3.6,
+        5,
+        10
+      ]
+    },
+    {
+      "ParaKey": "FRatedVoltage",
+      "ParaName": "额定电压",
+      "ParaType": "DropDownBox",
+      "Editable": true,
+      "IsTriggerSave": true,
+      "PostName": "V",
+      "DisplayValue": 3,
+      "TypeValue": [
+        2.5,
+        3,
+        3.8,
+        6,
+        12
+      ]
+    }
+  ],
+  "Classificate": "Circuit",
+  "LuaAgent": "LampAgent",
+  "NumberName": "L"
+}
