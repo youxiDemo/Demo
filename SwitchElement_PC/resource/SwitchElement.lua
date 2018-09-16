@@ -85,6 +85,12 @@ function SwitchSPSTAgent:Init(paramsTable)
 	self.VLabEleSoundCtrl:SetAudioVolume(self.AudioPathId, 1)
 	self.VLabEleSoundCtrl:AudioDefaultSetting(self.AudioPathId, false,false)
 
+	self.VLabChildAdsorb:Bind(entityId)
+	self.VLabChildAdsorb:Create(entityId,EmptyChildPath,tostring(SwitchSPSTAgent.elementType))
+	self.VLabChildAdsorb:InitViewAdsorb(EmptyChildPath,SwitchSPSTAgent.absorbParentConfig,EmptyChildPath,AbsorbDetectMode.SPHERE_COLLIDER_DETECT)
+	self.VLabChildAdsorb:SetSphereColliderDetectParams(EmptyChildPath,0.3,Vector3(0.1, 0.1, 0.1) , 0.5, 0)
+	self.VLabChildAdsorb:AddActionListener(EmptyChildPath,AbsorbActionType.AbsorbFinish,SwitchSPSTAgent.OnAbsorbToParentCallback)
+	self.VLabChildAdsorb:AddActionListener(EmptyChildPath,AbsorbActionType.CancelAbsorbFinish,SwitchSPSTAgent.OnCancelAbsorbToParentCallback)
 	
 	self:LBAInitInteractiveMove(EmptyChildPath, InteractiveMoveEventType.All, InputAxisType.Mastercontrol0)	
 	
@@ -199,6 +205,20 @@ end
 
 function SwitchSPSTAgent:OnEntireMove(objPath,eventType,WorldPos,offset,isFocus)
 	self:CircuitInteractiveMove(objPath,eventType,WorldPos,offset,isFocus)
+
+	self:LBABaseInteractiveMove(objPath, eventType, worldPos, offset, isFocus)
+	if AbsorbLinkMovePath == tostring(objPath) then
+		return
+	end
+
+	if eventType == "BeginMove" then
+		self:BreakAbsorbLinkedParent(EmptyChildPath)
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,true)
+	elseif eventType == "EndMove" then
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,false)
+	elseif eventType == "Moving" then	
+	end
+
 end
 
 function SwitchSPSTAgent:OnEntireClick(objPath,eventType,screenPos,worldPos)

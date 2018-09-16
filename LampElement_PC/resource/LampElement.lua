@@ -297,6 +297,20 @@ end
 
 function LampAgent:OnEntireMove(objPath,eventType,WorldPos,offset,isFocus)
 	self:CircuitInteractiveMove(objPath,eventType,WorldPos,offset,isFocus)
+
+	self:LBABaseInteractiveMove(objPath, eventType, worldPos, offset, isFocus)
+	if AbsorbLinkMovePath == tostring(objPath) then
+		return
+	end
+
+	if eventType == "BeginMove" then
+		self:BreakAbsorbLinkedParent(EmptyChildPath)
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,true)
+	elseif eventType == "EndMove" then
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,false)
+	elseif eventType == "Moving" then	
+	end
+
 end
 
 function LampAgent:OnEntireClick(objPath,eventType,screenPos,worldPos)
