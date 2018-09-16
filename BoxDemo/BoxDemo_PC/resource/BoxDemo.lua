@@ -125,9 +125,10 @@ function BoxDemoAgent:InitData(paramsTable)
 	local tResistor1 = self.CiruiteElementSet:GetPortIDs(Resistor1)
 	tResistor1 = CSArrayToLuaArray(tResistor1,2)
 
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId1[2])	--电源负极跟开关一端相连
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId2[2])	--电源负极跟开关一端相连
-	self:WirePostEngineLink(PowerAcId,tPowerAcId[2],SwitchId1,tSwitchId3[1])	--电源正极跟开关一端相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId1[2])	--电源负极跟开关1正极相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[1],SwitchId1,tSwitchId2[2])	--电源负极跟开关2正极端相连
+	self:WirePostEngineLink(PowerAcId,tPowerAcId[2],SwitchId1,tSwitchId3[1])	--电源正极跟开关3负极端相连
+	self:WirePostEngineLink(SwitchId2,tSwitchId2[1],SwitchId3,tSwitchId3[2])	--开关2负极跟开关3正极极端相连
 
 	self.portTable = {  { ["id"] = Resistor1, ["port"] = tResistor1[1] },
 						{ ["id"] = Resistor1, ["port"] = tResistor1[2] },
