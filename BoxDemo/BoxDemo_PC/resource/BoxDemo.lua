@@ -251,7 +251,7 @@ function BoxDemoAgent:OnChildAbsorbCallback(otherId)
 	if element.elementType == CircuitElementType.TableElement then
 		 element:LinkToTable(self, self.portTable)
 		 print( " 宝箱传递电阻正负极，开关1负极，开关3正极 " )
-		 self:LBADeleteInteractive(InteractiveACType.All, self.MoveId)
+		 self:LBADeleteInteractive(InteractiveACType.Drag, self.MoveId)
 	end
 end
 --取消吸附
