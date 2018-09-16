@@ -60,22 +60,22 @@ end
 function BoxDemoAgent:InitInteractive(entityId)
 
 	--空节点绑定
-	self:LBAInitInteractiveClick(EmptyChildPath,InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
-	self:LBAInitInteractiveClick(self.ModelPath["A"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
-	self:LBAInitInteractiveClick(self.ModelPath["B"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
-	self:LBAInitInteractiveClick(self.ModelPath["C"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
-	self:LBAInitInteractiveClick(self.ModelPath["BOX_TOP"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
+ 	-- self.ClickId = self:LBAInitInteractiveClick(EmptyChildPath,InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
+	self.ClickId_A = self:LBAInitInteractiveClick(self.ModelPath["A"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
+	self.ClickId_B  = self:LBAInitInteractiveClick(self.ModelPath["B"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
+	self.ClickId_C  = self:LBAInitInteractiveClick(self.ModelPath["C"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
+	self.ClickId_BOX_TOP  = self:LBAInitInteractiveClick(self.ModelPath["BOX_TOP"],InputAxisType.Mastercontrol0,nil,InteractParam.InteractFlag)
 	
 	--双击
-	self:LBAInitInteractiveDoubleClick(EmptyChildPath,InputAxisType.Mastercontrol0)
+	-- self:LBAInitInteractiveDoubleClick(EmptyChildPath,InputAxisType.Mastercontrol0)
 
 	-- 进入离开
-	self:LBAInitInteractivePointMove(EmptyChildPath,InteractivePointMoveEventType.Enter,InputAxisType.Mastercontrol0)
-	self:LBAInitInteractivePointMove(EmptyChildPath,InteractivePointMoveEventType.Exit,InputAxisType.Mastercontrol0)
+	-- self:LBAInitInteractivePointMove(EmptyChildPath,InteractivePointMoveEventType.Enter,InputAxisType.Mastercontrol0)
+	-- self:LBAInitInteractivePointMove(EmptyChildPath,InteractivePointMoveEventType.Exit,InputAxisType.Mastercontrol0)
 
 	-- 移动
-	self.MoveId = self:LBAInitInteractiveMove(EmptyChildPath,InteractiveMoveEventType.All,InputAxisType.Mastercontrol0)
-	self:SetEntireMoveId(self.MoveId)
+	self.MoveId = self:LBAInitInteractiveMove(EmptyChildPath,InteractiveMoveEventType.Drag,InputAxisType.Mastercontrol0)
+	-- self:SetEntireMoveId(self.MoveId)
 	
 end
 
@@ -149,7 +149,7 @@ end
 --========== 基类回调方法 =============
 
 function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strParams )
-	self:LBABaseInteractiveClick(objPath,eventType,screenPos,worldPos)
+	-- self:LBABaseInteractiveClick(objPath,eventType,screenPos,worldPos)
 
 	if objPath == self.ModelPath["BOX_TOP"] then
 		local pos = self.Transform:GetChildEulerAngles(self.ModelPath["BOX_TOP"],true)
@@ -242,6 +242,7 @@ function BoxDemoAgent:OnChildAbsorbCallback()
 	if element.elementType == CircuitElementType.TableElement then
 		 element:LinkToTable(self, self.portTable)
 		 print( " 宝箱传递电阻正负极，开关1负极，开关3正极 " )
+		 self:LBADeleteInteractive(InteractiveACType.Drag, self.MoveId)
 	end
 end
 --取消吸附
