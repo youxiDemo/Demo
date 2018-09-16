@@ -1,0 +1,48 @@
+{
+  "LabObjectType": 1114112,
+  "ObjName": "电池",
+  "CanDelete": true,
+  "State": 0,
+  //"OperateParas": [
+  //  {
+  //    "ParaKey": "ChangePole",
+  //    "DisplayName": "转换正负",
+  //    "ParaType": "Button",
+  //    "CanOperate": true,
+  //    "IsTriggerSave": true
+  //  }
+  //],
+  "ValueParas": [
+    {
+      "ParaKey": "PowerAction.Voltage",
+      "ParaName": "电压",
+      "ParaType": "DropDownBox",
+      "Editable": true,
+      "IsTriggerSave": true,
+      "PostName": "V",
+      "DisplayValue": 6,
+      "TypeValue": [
+        1.5,
+        3,
+        4.5,
+        6
+      ]
+    },
+    {
+      "ParaKey": "PowerAction.InternalResistance",
+      "ParaName": "内阻",
+      "ParaType": "FloatNumBox",
+      "Editable": true,
+      "IsTriggerSave": true,
+      "PostName": "Ω",
+      "DisplayValue": 0.1,
+      "Max": 10.0,
+      "Min": 0.0,
+      "Step": 0.1,
+      "Format": "#0.0"
+    }
+  ],
+  "Classificate": "Circuit",
+  "LuaAgent": "PowerAgent",
+  "NumberName": "E"
+}
