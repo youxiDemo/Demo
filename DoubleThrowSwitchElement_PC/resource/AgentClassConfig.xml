@@ -1,0 +1,29 @@
+<AgentCofig>
+	
+	<Agent agentClassname="DoubleThrowSwitchAgent" isReplicate="true" netUpdate="100">
+		<AgentComponent name="AgentSystemExtension.AgentComponent_Creator"/>
+        <AgentComponent name="AgentSystemExtension.AgentComponent_Transform"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_CircuitEngine"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_SwitchAction"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabChildAdsorb"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabLinkRelation"/>
+		
+		<AgentComponent name="AgentSystemExtension.AgentComponent_CiruiteElementSet"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabHighlighter"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabLeap"/>
+		
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveClickEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveDragEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveRotateEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveDoubleClickEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractivePointMoveEx"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabEleSoundCtrl"/>
+		
+		<AgentComponent name="AgentSystemExtension.AgentComponent_UIData"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabCursorObj"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabBestCameraAngle"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_InteractiveCommon"/>
+ <AgentComponent name="AgentSystemExtension.AgentComponent_CursorRegister"/>
+   </Agent>
+
+</AgentCofig>

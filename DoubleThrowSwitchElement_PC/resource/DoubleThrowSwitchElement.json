@@ -1,0 +1,9 @@
+{
+  "LabObjectType": 1183744,
+  "ObjName": "单刀双掷开关",
+  "CanDelete": true,
+  "State": 0,
+  "Classificate": "Circuit",
+  "LuaAgent": "DoubleThrowSwitchAgent",
+  "NumberName": "S"
+}
