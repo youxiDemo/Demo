@@ -17,16 +17,16 @@ JiGuanMenElementAgent.ModelPath["4"]="GameObjScale/JiGuangMenElement/door/Batter
 JiGuanMenElementAgent.HightModelPath = {}
 JiGuanMenElementAgent.HightModelPath["Battery"]="GameObjScale/JiGuangMenElement/door/Battery"
 
-JiGuanMenElementAgent.wirePostModelPath = {}
-JiGuanMenElementAgent.wirePostModelPath[1] = {}	--第一个是负极
-JiGuanMenElementAgent.wirePostModelPath[1]["leapPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hei"
-JiGuanMenElementAgent.wirePostModelPath[1]["knobPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hei/XuanNiu_02"
-JiGuanMenElementAgent.wirePostModelPath[1]["coilingPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hei/xian002"
+-- JiGuanMenElementAgent.wirePostModelPath = {}
+-- JiGuanMenElementAgent.wirePostModelPath[1] = {}	--第一个是负极
+-- JiGuanMenElementAgent.wirePostModelPath[1]["leapPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hei"
+-- JiGuanMenElementAgent.wirePostModelPath[1]["knobPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hei/XuanNiu_02"
+-- JiGuanMenElementAgent.wirePostModelPath[1]["coilingPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hei/xian002"
 
-JiGuanMenElementAgent.wirePostModelPath[2] = {}
-JiGuanMenElementAgent.wirePostModelPath[2]["leapPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hong"
-JiGuanMenElementAgent.wirePostModelPath[2]["knobPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hong/XuanNiu_01"
-JiGuanMenElementAgent.wirePostModelPath[2]["coilingPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hong/xian002"
+-- JiGuanMenElementAgent.wirePostModelPath[2] = {}
+-- JiGuanMenElementAgent.wirePostModelPath[2]["leapPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hong"
+-- JiGuanMenElementAgent.wirePostModelPath[2]["knobPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hong/XuanNiu_01"
+-- JiGuanMenElementAgent.wirePostModelPath[2]["coilingPath"] = "GameObjScale/JiGuangMenElement/JieXianZhu_Hong/xian002"
 
 --光标配置
 JiGuanMenElementAgent.CursorTable = {}
@@ -96,7 +96,7 @@ end
 
 -- 初始化数据
 function JiGuanMenElementAgent:InitData(entityId,paramsTable)
-	self:SetDianChiColor(4,"Orange")
+	self:SetDianChiColor(4,"Red")
 
 	--向引擎请求相应创建对象
 	local engineElementId = self:CreateCircuitComponent(EngineCircuitComponentType.Resistor)
@@ -108,6 +108,8 @@ function JiGuanMenElementAgent:InitData(entityId,paramsTable)
 	self.portTable = {  { ["id"] = engineElementId, ["port"] = tResistor1[1] },
 						{ ["id"] = engineElementId, ["port"] = tResistor1[2] },
 					 }
+		 
+	self.CiruiteElementSet:BindAttrChangeFunction(engineElementId,JiGuanMenElementAgent.ValueChangeCallback)
 end
 
 
@@ -149,7 +151,23 @@ function JiGuanMenElementAgent:ValueChangeCallback(jsonStr)
 	if not isOK or not self then
 		return
 	end
-	self:OnValueChangeCallback(paramsTable)
+	for i,v in pairs(params) do
+		local key = tostring(v["ParamKey"])
+		if key == "Voltage" then
+			print(" 电流变化回调"..v["NewValue"])
+			if v["NewValue"] == 0 then
+				self:SetDianChiColor(4,"Red")
+			elseif v["NewValue"] >= 1 then
+				self:SetDianChiColor(1,"Blue")
+			elseif v["NewValue"] >= 1.8 then
+				self:SetDianChiColor(2,"Blue")
+			elseif v["NewValue"] >= 2.3 then
+				self:SetDianChiColor(4,"Blue")
+			elseif v["NewValue"] == 3 then
+				self:SetDianChiColor(4,"Orange")
+			end 
+		end
+	end
 end
 
 
@@ -162,11 +180,12 @@ function JiGuanMenElementAgent:OnEntireMove(objPath,eventType,WorldPos,offset,is
 	
 	self:CircuitInteractiveMove(objPath,eventType,WorldPos,offset,isFocus)
 	if eventType == "BeginMove" then
-		
+		self:BreakAbsorbLinkedParent(EmptyChildPath)
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,true)
 	elseif eventType == "Moving" then
 		
 	elseif eventType == "EndMove" then
-		
+		self.VLabChildAdsorb:ChildDetecting(EmptyChildPath,false)
 	end
 end
 
@@ -178,14 +197,18 @@ end
 --设置标记符号
 function JiGuanMenElementAgent:SetDianChiColor(number,color)
 	local nColor = color
-	for i = 1,number do 
+	for i = 1,4 do 
 		i = tostring(i)
-		if nColor == "Red" then
+		if i <=  number then
+			if nColor == "Red" then
+				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,1,0,0)
+			elseif nColor == "Blue" then
+				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,0,1,0)
+			elseif nColor == "Orange" then
+				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,1,0.5,0)
+			end
+		else
 			self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,1,0,0)
-		elseif nColor == "Blue" then
-			self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,0,1,0)
-		elseif nColor == "Orange" then
-			self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,1,0.5,0)
 		end
 	end
 end 
