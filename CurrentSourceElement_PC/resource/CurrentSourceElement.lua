@@ -206,6 +206,7 @@ function PowerAgent:ChanageModel(id)
 end
 
 function PowerAgent:ValueChangeCallback(strJson)
+	print("电压变化回调...........................")
 	local isOK,params = ToolClass.GetLuaTableFroJson(strJson)
 	if not isOK or not self then
 		return

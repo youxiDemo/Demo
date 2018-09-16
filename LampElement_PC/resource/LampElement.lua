@@ -98,6 +98,11 @@ function LampAgent:Init(paramsTable)
 	self.VLabChildAdsorb:AddActionListener(EmptyChildPath,AbsorbActionType.AbsorbFinish,LampAgent.OnAbsorbToParentCallback)
 	self.VLabChildAdsorb:AddActionListener(EmptyChildPath,AbsorbActionType.CancelAbsorbFinish,LampAgent.OnCancelAbsorbToParentCallback)
 	
+	--链接
+	self.VLabLinkRelation:Bind(entityId)
+	local linkId = self.VLabLinkRelation:CreateChildLink(EmptyChildPath)
+	self:SaveAbsorbLinkData(AbsorbLinkPartType.Child, EmptyChildPath,linkId)
+	
 
 	--初始化接线柱能力
 	local enginePortTable = self.ResistorAction.PortIDs

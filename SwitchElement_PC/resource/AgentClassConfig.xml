@@ -25,7 +25,6 @@
 
 		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabChildAdsorb"/>
 		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabLinkRelation"/>
-	</Agent>
    </Agent>
 
 </AgentCofig>

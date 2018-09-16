@@ -73,7 +73,7 @@ function SwitchSPSTAgent:Init(paramsTable)
 	enginePortTable = CSArrayToLuaArray(enginePortTable,2)
 	self.enginePortTable = enginePortTable
 	self:InitWirePost(engineElementId,2,SwitchSPSTAgent.wirePostModelPath,enginePortTable,paramsTable.ID)
-	
+
 	--交互功能绑定
 	local entityId = self:GetEntityId()
 	self.VLabBestCameraAngle:Bind(entityId)
@@ -92,6 +92,13 @@ function SwitchSPSTAgent:Init(paramsTable)
 	self.VLabChildAdsorb:AddActionListener(EmptyChildPath,AbsorbActionType.AbsorbFinish,SwitchSPSTAgent.OnAbsorbToParentCallback)
 	self.VLabChildAdsorb:AddActionListener(EmptyChildPath,AbsorbActionType.CancelAbsorbFinish,SwitchSPSTAgent.OnCancelAbsorbToParentCallback)
 	
+
+	--链接
+	self.VLabLinkRelation:Bind(entityId)
+	local linkId = self.VLabLinkRelation:CreateChildLink(EmptyChildPath)
+	self:SaveAbsorbLinkData(AbsorbLinkPartType.Child, EmptyChildPath,linkId)
+	
+
 	self:LBAInitInteractiveMove(EmptyChildPath, InteractiveMoveEventType.All, InputAxisType.Mastercontrol0)	
 	
 	local cursorTable = 

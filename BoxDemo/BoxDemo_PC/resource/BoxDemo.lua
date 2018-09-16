@@ -91,7 +91,7 @@ function BoxDemoAgent:InitData(paramsTable)
 	local SwitchId3 = self:CreateCircuitComponent(EngineCircuitComponentType.SwitchSPST)
 	--电阻
 	local Resistor1 = self:CreateCircuitComponent(EngineCircuitComponentType.Resistor)
-	self.CiruiteElementSet:BindAttrChangeFunction(Resistor1,BoxDemoAgent.ValueChangeCallback)
+
 
 	--和引擎能力 Component 绑定
 	self.CiruiteElementSet:InitType("PowerAction")
@@ -107,8 +107,11 @@ function BoxDemoAgent:InitData(paramsTable)
 	--电阻
 	self.CiruiteElementSet:InitType("ResistorAction")
 	self.CiruiteElementSet:AddComponent("ResistorAction", Resistor1)
-
+	self.CiruiteElementSet:Set(Resistor1,"Resistance",0.1)
 	--电源
+
+	self.CiruiteElementSet:BindAttrChangeFunction(Resistor1,BoxDemoAgent.ValueChangeCallback)
+
 	local tPowerAcId = self.CiruiteElementSet:GetPortIDs(PowerAcId)
 	tPowerAcId = CSArrayToLuaArray(tPowerAcId,2)
 
@@ -133,8 +136,8 @@ function BoxDemoAgent:InitData(paramsTable)
 
 	self.portTable = {  { ["id"] = Resistor1, ["port"] = tResistor1[1] },
 						{ ["id"] = Resistor1, ["port"] = tResistor1[2] },
-						{ ["id"] = tSwitchId1, ["port"] = tSwitchId1[1] },
-						{ ["id"] = tSwitchId3, ["port"] = tSwitchId3[2] },
+						{ ["id"] = SwitchId1, ["port"] = tSwitchId1[1] },
+						{ ["id"] = SwitchId3, ["port"] = tSwitchId3[2] }
 					 }
 
 	self.tSwitchId1 = tSwitchId1
@@ -246,7 +249,7 @@ function BoxDemoAgent:InitChildLink(entityId)
 end
 
 --吸附
-function BoxDemoAgent:OnChildAbsorbCallback(otherId)
+function BoxDemoAgent:OnChildAbsorbCallback(selfId, selfPath, otherId, otherPath)
 	local element = LabElementManager.GetElement(otherId)
 	if element.elementType == CircuitElementType.TableElement then
 		 element:LinkToTable(self, self.portTable)
@@ -261,12 +264,13 @@ end
 
 --电流变化回调
 function BoxDemoAgent:ValueChangeCallback(componentId,jsonStr)
+	print(" 电流变化回调")
 	local isOK,params = ToolClass.GetLuaTableFroJson(jsonStr)
 	if not isOK or not self then
 		return
 	end
 	if not self.isBoxOpen then
-		print(" 电流变化回调")
+		
 		local vol = self.CiruiteElementSet:Get(self.Resistor1,"Voltage")
 		for i,v in pairs(params) do
 			local key = tostring(v["ParamKey"])

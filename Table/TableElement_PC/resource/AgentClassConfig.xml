@@ -4,6 +4,7 @@
 		<AgentComponent name="AgentSystemExtension.AgentComponent_Creator"/>
         <AgentComponent name="AgentSystemExtension.AgentComponent_Transform"/>
 		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabChangeModel"/>
+		<AgentComponent name="AgentSystemExtension.AgentComponent_CircuitEngine"/>
 		
 		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabHighlighter"/>
 		<AgentComponent name="AgentSystemExtension.AgentComponent_VLabLeap"/>

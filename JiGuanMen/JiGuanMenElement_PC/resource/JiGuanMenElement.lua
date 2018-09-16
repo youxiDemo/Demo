@@ -65,6 +65,7 @@ function JiGuanMenElementAgent:Init(paramsTable)
 	self:InitData(entityId,paramsTable)
 	self:InitInteractive(self.entityId) 					-- 初始化绑定交互
 	--self:InitText(entityId)
+	self:InitChildAbsord(entityId)   
 	self:InitActionValues()							-- 调用基类反序列化函数
 end
 
@@ -104,12 +105,14 @@ function JiGuanMenElementAgent:InitData(entityId,paramsTable)
 	self.CiruiteElementSet:AddComponent("ResistorAction", engineElementId)
 	--电阻1
 	local tResistor1 = self.CiruiteElementSet:GetPortIDs(engineElementId)
-	tResistor1 = CSArrayToLuaArray(engineElementId,2)
+	tResistor1 = CSArrayToLuaArray(tResistor1,2)
 	self.portTable = {  { ["id"] = engineElementId, ["port"] = tResistor1[1] },
 						{ ["id"] = engineElementId, ["port"] = tResistor1[2] },
 					 }
-		 
 	self.CiruiteElementSet:BindAttrChangeFunction(engineElementId,JiGuanMenElementAgent.ValueChangeCallback)
+
+	self.highlighterIds = self.VLabHighlighter:CreateSubHighlighter(self.HightModelPath["Battery"])
+	self.VLabHighlighter:SubFlash(self.highlighterIds, true, Color(0,1,0,0), ElementHighLightColor)
 end
 
 
@@ -130,7 +133,7 @@ function JiGuanMenElementAgent:InitChildLink(entityId)
 end
 
 --吸附
-function JiGuanMenElementAgent:OnChildAbsorbCallback()
+function JiGuanMenElementAgent:OnChildAbsorbCallback(ownerId,ownerPath,otherId,otherPath)
 	local element = LabElementManager.GetElement(otherId)
 	if element.elementType == CircuitElementType.TableElement then
 		 element:LinkToTable(self, self.portTable)
@@ -139,7 +142,7 @@ function JiGuanMenElementAgent:OnChildAbsorbCallback()
 	end
 end
 --取消吸附
-function JiGuanMenElementAgent:OnChildCancleAbsorbCallback()
+function JiGuanMenElementAgent:OnChildCancleAbsorbCallback(ownerId,ownerPath,otherId,otherPath)
 
 end
 
