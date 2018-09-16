@@ -198,17 +198,17 @@ end
 function JiGuanMenElementAgent:SetDianChiColor(number,color)
 	local nColor = color
 	for i = 1,4 do 
-		i = tostring(i)
+		s = tostring(i)
 		if i <=  number then
 			if nColor == "Red" then
-				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,1,0,0)
+				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[s],0,1,0,0)
 			elseif nColor == "Blue" then
-				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,0,1,0)
+				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[s],0,0,1,0)
 			elseif nColor == "Orange" then
-				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,1,0.5,0)
+				self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[s],0,1,0.5,0)
 			end
 		else
-			self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[i],0,1,0,0)
+			self.VLabChangeModel:ChangeMaterialColor(self.ModelPath[s],0,1,0,0)
 		end
 	end
 end 
