@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EquipmentIntro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <Equipments>	
+	<Equipment type="10005" name="机关门" resource="JiGuanMenElement">
+      <Subjects>
+        <Subject type="Name" name="机关门" />
+        <Subject type="Structure" name="结构">
+          <Contents>
+            <Content type="Text" data="一个铁质的门" />
+          </Contents>
+        </Subject>
+        <Subject type="Principle" name="工作原理">
+          <Contents>
+            <Content type="Text" data="电压达到一定程度能够开启" />
+          </Contents>
+        </Subject>
+        <Subject type="Effect" name="作用">
+          <Contents>
+            <Content type="Text" data="逃生" />
+          </Contents>
+        </Subject>
+      </Subjects>
+    </Equipment>
+<Equipment type="19999" name="宝箱" resource="BoxDemo">
+      <Subjects>
+        <Subject type="Name" name="宝箱" />
+        <Subject type="Structure" name="结构">
+          <Contents>
+            <Content type="Text" data="" />
+          </Contents>
+        </Subject>
+        <Subject type="Principle" name="工作原理">
+          <Contents>
+            <Content type="Text" data="" />
+          </Contents>
+        </Subject>
+        <Subject type="Effect" name="作用">
+          <Contents>
+            <Content type="Text" data="" />
+          </Contents>
+        </Subject>
+      </Subjects>
+    </Equipment>	
 	<Equipment type="2018915" name="桌子" resource="TableElement">
       <Subjects>
         <Subject type="Name" name="桌子" />

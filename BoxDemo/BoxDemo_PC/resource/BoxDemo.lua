@@ -90,7 +90,7 @@ function BoxDemoAgent:InitData(paramsTable)
 	local SwitchId3 = self:CreateCircuitComponent(EngineCircuitComponentType.SwitchSPST)
 	--电阻
 	local Resistor1 = self:CreateCircuitComponent(EngineCircuitComponentType.Resistor)
-	local Resistor2 = self:CreateCircuitComponent(EngineCircuitComponentType.Resistor)
+	self.CiruiteElementSet:BindAttrChangeFunction(Resistor1,BoxDemoAgent.ValueChangeCallback)
 
 	--和引擎能力 Component 绑定
 	self.CiruiteElementSet:InitType("PowerAction")
@@ -143,6 +143,11 @@ function BoxDemoAgent:InitData(paramsTable)
 	self.CiruiteElementSet:Set(tostring(tSwitchId1), "isOpen", false)
 	self.CiruiteElementSet:Set(tostring(tSwitchId2), "isOpen", false)
 	self.CiruiteElementSet:Set(tostring(tSwitchId3), "isOpen", false)
+
+	self.Resistor1 = Resistor1
+
+
+	self.isBoxOpen = false
 	--初始化场景对象
 	-- self:LBABaseInit(paramsTable)
 end
@@ -152,14 +157,14 @@ end
 function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strParams )
 	-- self:LBABaseInteractiveClick(objPath,eventType,screenPos,worldPos)
 
-	if objPath == self.ModelPath["BOX_TOP"] then
-		local pos = self.Transform:GetChildEulerAngles(self.ModelPath["BOX_TOP"],true)
-		print("demo 单击测试" .. tostring(pos.x))
-		if pos.x >= 1 then
-		else
-			self:ITween()
-		end
-	end
+	-- if objPath == self.ModelPath["BOX_TOP"] then
+	-- 	local pos = self.Transform:GetChildEulerAngles(self.ModelPath["BOX_TOP"],true)
+	-- 	print("demo 单击测试" .. tostring(pos.x))
+	-- 	if pos.x >= 1 then
+	-- 	else
+	-- 		self:ITween()
+	-- 	end
+	-- end
 	
 	if objPath == self.ModelPath["A"] then
 		local pos = self.Transform:GetChildEulerAngles(objPath,true)
@@ -251,4 +256,29 @@ function BoxDemoAgent:OnChildCancleAbsorbCallback()
 
 end
 
-
+--电流变化回调
+function BoxDemoAgent:ValueChangeCallback(componentId,jsonStr)
+	local isOK,params = ToolClass.GetLuaTableFroJson(jsonStr)
+	if not isOK or not self then
+		return
+	end
+	if not self.isBoxOpen then
+		print(" 电流变化回调")
+		local vol = self.CiruiteElementSet:Get(self.Resistor1,"Voltage")
+		for i,v in pairs(params) do
+			local key = tostring(v["ParamKey"])
+			if key == "Current" then
+				print(" 电流变化回调"..v["NewValue"])
+				if v["NewValue"] ~= 0 then
+					local pos = self.Transform:GetChildEulerAngles(self.ModelPath["BOX_TOP"],true)
+					if pos.x >= 1 then
+					else
+						self:ITween()
+						self.isBoxOpen = true
+						print("demo 开宝箱测试" .. tostring(pos.x))
+					end
+				end 
+			end
+		end
+	end
+end

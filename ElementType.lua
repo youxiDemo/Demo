@@ -90,6 +90,10 @@ CircuitElementType =
 	XieMianElement = 3145748,--斜面
 
 	--**********************电学  10001 - 19999*************************
+	BoxDemo = 19999,  -- 宝箱
+	JiGuanMenElement = 10005,  -- 机关门
+	TableElement = 2018915,  -- 桌子
+
 	HeiBiaoBi = 4110,-- 黑表笔
 	HongBiaoBi = 4109,-- 红表笔
 	ShiBoQi = 4277,  -- 示波器
@@ -109,7 +113,8 @@ CircuitElementType =
 	DanLu2ShuRuYuMenElement = 1638657 ,--与门
 	DanLu2ShuRuHuoMenElement = 1638656,		--单路2输入或门
 	ElectricFieldDisplay = 1302530,  --电场线演示器
-	--**********************磁学  20001 - 29999*************************    TableElement = 2018915,  -- 桌子
+	--**********************磁学  20001 - 29999*************************
+   
 
     DaiCiTieDeTieJiaTaiElement = 1327104,  -- 带磁铁的铁架台
 
@@ -207,7 +212,8 @@ CircuitElementType =
 	QuanXiZhaoXiangYanShiQi = 40007, --全息照相演示器
 	YeTiBiaoMianZhangLiYanShiQiYi = 4231,	--液体表面张力演示器1
 	YeTiBiaoMianZhangLiYanShiQiEr = 40008,	--液体表面张力演示器2
-	--**********************化学  50001 - 59999*************************    JieTiZhuangLvPian = 1357,  -- 阶梯状铝片
+	--**********************化学  50001 - 59999*************************
+    JieTiZhuangLvPian = 1357,  -- 阶梯状铝片
 
 	ErYangHuaTanPingGai = 51048, 
 	ErYangHuaTanPing = 51047,

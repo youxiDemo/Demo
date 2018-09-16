@@ -5,6 +5,10 @@
       <Categories>
         <Category type="Electricity" classificate="Circuit" name="电学" categoryid="0">
           <Equipments>
+		  	<Equipment type="10005" name="机关门" resname="JiGuanMenElement">
+			</Equipment>          
+            <Equipment type="19999" name="宝箱" resname="BoxDemo">
+			</Equipment>
 		    <Equipment type="4110" name="黑表笔" resname="HeiBiaoBi" isSlave="true">
             </Equipment>
 			<Equipment type="4109" name="红表笔" resname="HongBiaoBi" isSlave="true">
