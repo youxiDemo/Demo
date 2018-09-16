@@ -1,0 +1,12 @@
+{
+	"LabObjectType": 10005,
+	"ObjName": "机关门",
+	"CanDelete": true,
+	"State": 0,
+	"ValueParas": [
+		
+	],
+	"Classificate": "Circuit",
+	"LuaAgent": "JiGuanMenElementAgent",
+	"NumberName": ""
+}
