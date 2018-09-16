@@ -74,7 +74,8 @@ function BoxDemoAgent:InitInteractive(entityId)
 	-- self:LBAInitInteractivePointMove(EmptyChildPath,InteractivePointMoveEventType.Exit,InputAxisType.Mastercontrol0)
 
 	-- 移动
-	self.MoveId = self:LBAInitInteractiveMove(EmptyChildPath,InteractiveMoveEventType.Drag,InputAxisType.Mastercontrol0)
+	self.MoveId = self:LBAInitInteractiveMove(EmptyChildPath,InteractiveMoveEventType.All,InputAxisType.Mastercontrol0)
+
 	-- self:SetEntireMoveId(self.MoveId)
 	
 end
@@ -245,12 +246,12 @@ function BoxDemoAgent:InitChildLink(entityId)
 end
 
 --吸附
-function BoxDemoAgent:OnChildAbsorbCallback()
+function BoxDemoAgent:OnChildAbsorbCallback(otherId)
 	local element = LabElementManager.GetElement(otherId)
 	if element.elementType == CircuitElementType.TableElement then
 		 element:LinkToTable(self, self.portTable)
 		 print( " 宝箱传递电阻正负极，开关1负极，开关3正极 " )
-		 self:LBADeleteInteractive(InteractiveACType.Drag, self.MoveId)
+		 self:LBADeleteInteractive(InteractiveACType.All, self.MoveId)
 	end
 end
 --取消吸附
