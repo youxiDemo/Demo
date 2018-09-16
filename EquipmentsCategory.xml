@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EquipmentsCategory>
+  <Subjects>
+    <Subject type="Physics" name="物理">
+      <Categories>
+        <Category type="Electricity" classificate="Circuit" name="电学" categoryid="0">
+          <Equipments>
+		    <Equipment type="4110" name="黑表笔" resname="HeiBiaoBi" isSlave="true">
+            </Equipment>
+			<Equipment type="4109" name="红表笔" resname="HongBiaoBi" isSlave="true">
+            </Equipment>
+            <Equipment type="1572864" name="导线" resname="EleLine">
+            </Equipment>
+            <Equipment type="1179648" name="单刀单掷开关" resname="SwitchElement">
+            </Equipment>
+            <Equipment type="1249280" name="小灯泡" resname="LampElement">
+            </Equipment>
+            <Equipment type="1249281" name="随温度变化灯泡" resname="LampBKElement">
+            </Equipment>
+            <Equipment type="1114112" name="电池" resname="CurrentSourceElement">
+            </Equipment>
+            <Equipment type="1253376" name="标准电流表" resname="AmpereMeterElement">
+            </Equipment>
+            <Equipment type="1257472" name="标准电压表" resname="VoltMeterElement">
+            </Equipment>
+            <Equipment type="1335808" name="电阻定律演示器" resname="DianZuDingLvShiYanQi">
+            </Equipment>
+            <Equipment type="1638410" name="带绝缘柄的金属小球" resname="DaiJueYuanBingDeJinShuXiaoQiu">
+            </Equipment>
+            <Equipment type="1269760" name="滑动变阻器" resname="SlideResistorElement">
+            </Equipment>
+            <Equipment type="1335296" name="焦耳定律实验器" resname="JiaoErDingLvShiYanQi">
+            </Equipment>
+            <Equipment type="1273856" name="学生电源" resname="StudentPowerElement">
+            </Equipment>
+            <Equipment type="1314816" name="保险丝作用演示器" resname="BaoXianSiZuoYongYanShiQiElement">
+            </Equipment>
+            <Equipment type="1638406" name="电荷间作用力演示器" resname="DianHeJianZuoYongLiYanShiQi">
+            </Equipment>
+            <Equipment type="1302529" name="发光二极管" resname="">
+            </Equipment>
+            <Equipment type="1245184" name="定值电阻" resname="ResistorElement">
+            </Equipment>
+            <Equipment type="1336064" name="电阻箱" resname="DianZuXiangElement">
+            </Equipment>
+            <Equipment type="1302528" name="二极管" resname="ErJiGuanElement">
+            </Equipment>
+            <Equipment type="1336577" name="水果电池" resname="ShuiGuoDianChiElement">
+            </Equipment>
+            <Equipment type="1336579" name="调压器" resname="TiaoYaQiElement">
+            </Equipment>
+            <Equipment type="1638661" name="带底座的白炽灯" resname="IncandescentLampElement">
+            </Equipment>
+            <Equipment type="1638658" name="74LS14集成块" resname="QiSiLSYiSiElement">
+            </Equipment>
+            <Equipment type="1638657" name="单路2输入与门" resname="DanLu2ShuRuYuMenElement">
+            </Equipment>
+            <Equipment type="1638656" name="单路2输入或门" resname="DanLu2ShuRuHuoMenElement">
+            </Equipment>
+            <Equipment type="1638418" name="电容器" resname="DianRongQiElement">
+            </Equipment>
+            <Equipment type="1336320" name="台灯" resname="TaiDengElement">
+            </Equipment>
+            <Equipment type="1638660" name="蜂鸣器" resname="FengMingQiElement">
+            </Equipment>
+            <Equipment type="4272" name="平行直导线作用演示器" resname="PingXingZhiDaoXianZuoYongYanShiQi">
+            </Equipment>
+            <Equipment type="1302530" name="电场线演示器" resname="ElectricFieldDisplay">
+            </Equipment>
+            <Equipment type="2097165" name="绝缘支架" resname="InsulatorBracketElement">
+            </Equipment>
+            <Equipment type="1638409" name="热敏电阻" resname="ReMinDianZu">
+            </Equipment>
+            <Equipment type="3145730" name="螺旋测微器" resname="LuoXuanCeWeiQi">
+            </Equipment>
+            <Equipment type="2097161" name="玻璃棒" resname="GlassStickElement">
+            </Equipment>
+            <Equipment type="2097164" name="丝绸手帕" resname="SilkElement">
+            </Equipment>
+            <Equipment type="2097163" name="毛皮" resname="FurElement">
+            </Equipment>
+            <Equipment type="2097160" name="橡胶棒" resname="RubberStickElement">
+            </Equipment>
+            <Equipment type="2097167" name="箔片验电器" resname="FoilElectriscopeElement">
+            </Equipment>
+            <Equipment type="1638401" name="带绝缘柄的金属棒" resname="DaiJueYuanBingDeJinShuBang">
+            </Equipment>
+            <Equipment type="1638412" name="球形导体" resname="QiuXingDaoTi">
+            </Equipment>
+            <Equipment type="1183744" name="单刀双掷开关" resname="DoubleThrowSwitchElement">
+            </Equipment>
+            <Equipment type="1638404" name="外皮受损的电阻" resname="WaiPiShunHuiDeDianZhuElement">
+            </Equipment>
+            <Equipment type="1638411" name="感应起电机" resname="GanYingQiDianJi">
+            </Equipment>
+            <Equipment type="1638407" name="空心金属球" resname="KongXinJinShuQiu">
+            </Equipment>
+            <Equipment type="1336576" name="金属网罩" resname="JinShuWangZhao">
+            </Equipment>
+            <Equipment type="1638400" name="静电计" resname="JingDianJiElement">
+            </Equipment>
+            <Equipment type="1638402" name="平行板电容器" resname="PingXingBanDianRongQi">
+            </Equipment>
+            <Equipment type="2097264" name="枕型导体" resname="ZhenXingDaoTi">
+            </Equipment>
+            <Equipment type="1638659" name="节能灯" resname="SavingLampElement">
+            </Equipment>
+            <Equipment type="1638662" name="白炽灯" resname="IncandescentLampNDElement">
+            </Equipment>
+            <Equipment type="1638408" name="手电筒" resname="FlashlightElement">
+            </Equipment>
+            <Equipment type="1638405" name="光敏电阻" resname="GuangMinDianZuElement">
+            </Equipment>
+            <Equipment type="4108" name="指针式万用表" resname="ZhiZhenShiWanYongBiaoElement" slaves="4109,4110">
+            </Equipment>
+            <Equipment type="4257" name="阴极射线管(示直进管)" resname="ShiZhiJinGuanElement">
+            </Equipment>
+            <Equipment type="1335552" name="数字万用表" resname="ShuZiWanYongBiaoElement" slaves="4109,4110">
+            </Equipment>
+            <Equipment type="4168" name="电吹风" resname="DianChuiFengElement">
+            </Equipment>
+            <Equipment type="1638663" name="家庭电路演示板" resname="JiaTingDianLuYanShiBanElement">
+            </Equipment>
+            <Equipment type="4116" name="烧杯" resname="ShaoBeiElement">
+            </Equipment>
+			<Equipment type="41160" name="烧杯Test" resname="ShaoBeiTestElement">
+            </Equipment>
+          </Equipments>
+        </Category>
+		  <Category type="SubEquip" classificate="SubEquipment" name="从属元器件" categoryid="2">
+          <Equipments>		  
+			<Equipment type="10001" name="示波器探头线" resname="ShiBoQiTanTouXian" isSlave="true"> 
+			</Equipment>
+            <Equipment type="3145769" name="砝码" resname="FaMa" isSlave="true">
+            </Equipment>
+            <Equipment type="50020" name="球型分液漏斗盖" resname="QiuXingFenYeLouDouGai" isSlave = "true">
+			</Equipment>
+            <Equipment type="50017" name="梨形分液漏斗盖" resname="LiXingFenYeLouDouGai" isSlave="true">
+			</Equipment>
+          </Equipments>
+        </Category>
+        <Category type="Optics" classificate="Optics" name="光学" categoryid="1">
+
+          <Equipments>	
+			<Equipment type="40007" name="全息照相演示器" resname="QuanXiZhaoXiangYanShiQi">
+			</Equipment> 		  
+          <Equipment type="40006" name="铁丝圈" resname="TieXianQuan">
+			</Equipment> 
+			<Equipment type="4326" name="偏振器" resname="PianZhenQi">
+			</Equipment>
+			<Equipment type="4219" name="双缝干涉实验仪" resname="ShuangFengGanSheShiYanYi">
+			</Equipment>
+		  <Equipment type="4329" name="紫外线灯" resname="ZiWaiXianDeng">
+          </Equipment>
+		  <Equipment type="4330" name="水流导光装置" resname="ShuiLiuDaoGuangZhuangZhi">
+          </Equipment>
+            <Equipment type="4216" name="光屏" resname="GuangPingElement">
+            </Equipment>
+            <Equipment type="5242883" name="蜡烛" resname="LaZhuElement">
+            </Equipment>
+            <Equipment type="4194308" name="白纸" resname="BaiZhiElement">
+            </Equipment>
+            <Equipment type="3145795" name="量角器" resname="LiangJiaoQiElement">
+            </Equipment>
+            <Equipment type="4232" name="肥皂液" resname="FeiZaoYe">
+            </Equipment>
+            <Equipment type="3145764" name="木板" resname="MuBan">
+            </Equipment>
+            <Equipment type="4182" name="图钉" resname="TuDingElement">
+            </Equipment>
+             <Equipment type="4324" name="弯曲的有机玻璃棒" resname="WanQuDeYouJiBoLiBang">
+            </Equipment>
+            <Equipment type="4218" name="光具座" resname="GuangJuZuoElement">
+            </Equipment>
+            <Equipment type="4217" name="凸透镜" resname="TuTouJingElement">
+            </Equipment>
+            <Equipment type="4320" name="单面凹透镜" resname="DanMianAoTouJing">
+            </Equipment>
+			      <Equipment type="40003" name="单面凸透镜" resname="DanMianTuTouJing">
+            </Equipment>
+            <Equipment type="4317" name="三棱镜" resname="SanLengJing">
+            </Equipment>
+            <Equipment type="4316" name="平行光源" resname="PingXingGuangYuan">
+            </Equipment>
+			<Equipment type="4179" name="激光笔" resname="JiGuangBiElement">
+ 			</Equipment>
+            <Equipment type="4325" name="激光光学演示仪" resname="JiGuangGuangXueYanShiYi">
+ 			</Equipment>
+			<Equipment type="5211" name="长方形玻璃水槽" resname="ChangFangXingBoLiShuiCao">
+            </Equipment>
+             <Equipment type="4213" name="折叠纸板" resname="ZheDieZhiBan">
+            </Equipment>
+			<Equipment type="4323" name="半圆形玻璃砖" resname="BanYuanXingBoLiZhuan">
+            </Equipment>
+            <Equipment type="4231" name="液体表面张力演示器1" resname="YeTiBiaoMianZhangLiYanShiQiYi">
+            </Equipment>
+            <Equipment type="40008" name="液体表面张力演示器2" resname="YeTiBiaoMianZhangLiYanShiQiEr">
+            </Equipment>
+			<Equipment type="40001" name="平面镜" resname="PingMianJing">
+            </Equipment>
+            <Equipment type="4322" name="投影仪模型" resname="TouYingYiElement">
+            </Equipment>
+             <Equipment type="4321" name="投影片" resname="TouYingPianElement">
+            </Equipment>
+            <Equipment type="4318" name="平行线激光器" resname="PingXingXianJiGuangQi">
+            </Equipment>
+            <Equipment type="4180" name="长方形玻璃砖" resname="ChangFangXingBoLiZhuan">
+            </Equipment>  
+            <Equipment type="40004" name="带白纸的木板" resname="DaiBaiZhiDeMuBan">
+            </Equipment>
+
+			<Equipment type="40005" name="坐标纸" resname="ZuoBiaoZhiElement">
+            </Equipment>
+           </Equipments>
+        </Category>
+        <Category type="Electromagnetism" classificate="Magnetism" name="电磁学" categoryid="2">
+          <Equipments>		  
+			<Equipment type="2018915" name="桌子" resname="TableElement">
+			</Equipment>		  
+            <Equipment type="1572864" name="导线" resname="EleLine">
+            </Equipment>
+            <Equipment type="1114112" name="电池" resname="CurrentSourceElement">
+            </Equipment>
+            <Equipment type="1273856" name="学生电源" resname="StudentPowerElement">
+            </Equipment>
+            <Equipment type="1179648" name="单刀单掷开关" resname="SwitchElement">
+            </Equipment>
+            <Equipment type="1290240" name="灵敏电流计" resname="GalvanoMeterElement">
+            </Equipment>
+            <Equipment type="1269760" name="滑动变阻器" resname="SlideResistorElement">
+            </Equipment>
+            <Equipment type="2097216" name="收音机" resname="ShouYinJiElement">
+            </Equipment>
+            <Equipment type="2097232" name="带导线的干电池" resname="DaiDaoXianDeGanDianChiElement">
+            </Equipment>
+            <Equipment type="1302529" name="发光二极管" resname="FaGuangErJiGuan">
+            </Equipment>
+            <Equipment type="1507329" name="可拆变压器" resname="DetachableTransformer">
+            </Equipment>
+            <Equipment type="1638413" name="螺线管磁感线演示器" resname="LuoXianGuanCiGanXianYanShiQi">
+            </Equipment>
+            <Equipment type="4126" name="蹄形磁铁" resname="UMagnetElement">
+            </Equipment>
+            <Equipment type="1310720" name="金属导轨" resname="JinShuDaoGui">
+            </Equipment>
+            <Equipment type="4129" name="金属棒" resname="MetalStickElement">
+            </Equipment>
+            <Equipment type="2097280" name="手机" resname="ShouJiElement">
+            </Equipment>
+            <Equipment type="2097281" name="抽气机" resname="ChouQiJiElement">
+            </Equipment>
+            <Equipment type="2097248" name="真空罩" resname="ZhenKongZhaoDiZuoElement">
+            </Equipment>
+            <Equipment type="2097282" name="橡胶软管" resname="RubberHoseElement">
+            </Equipment>
+            <Equipment type="1638403" name="螺线管" resname="LuoXianGuanElement">
+            </Equipment>
+            <Equipment type="1638418" name="电容器" resname="DianRongQiElement">
+            </Equipment>
+            <Equipment type="2097408" name="铁架台" resname="TieJiaTaiElement">
+            </Equipment>
+            <Equipment type="2097409" name="绝缘杆铁夹" resname="JueYuanGanTieJiaElement">
+            </Equipment>
+            <Equipment type="2097410" name="三合一铁夹" resname="SanHeYiTieJiaElement">
+            </Equipment>
+            <Equipment type="1327104" name="带磁铁的铁架台" resname="DaiCiTieDeTieJiaTaiElement">
+            </Equipment>
+            <Equipment type="2097412" name="带多个磁铁的铁架台" resname="DaiDuoCiTieDeTieJiaTaiElement">
+            </Equipment>
+            <Equipment type="2097298" name="干簧管演示盒" resname="GanHuangGuanYanShiHeElement">
+            </Equipment>
+            <Equipment type="2097297" name="干簧管" resname="GanHuangGuanElement">
+            </Equipment>
+            <Equipment type="2097153" name="条形磁铁" resname="TiaoXingCiTieElement">
+            </Equipment>
+            <Equipment type="0" name="通电平行直导线">
+            </Equipment>
+            <Equipment type="2097201" name="电磁驱动演示器" resname="DianCiQuDongYanShiQi">
+            </Equipment>
+            <Equipment type="4258" name="电感线圈" resname="DianGanXianQuanElement">
+            </Equipment>
+            <Equipment type="1323008" name="电子感应圈" resname="DianZiGanYingQuanElement">
+            </Equipment>
+            <Equipment type="1306624" name="简易电动机" resname="SimpleElectricMotorElement">
+            </Equipment>
+            <Equipment type="2097156" name="小磁针" resname="XiaoCiZhenElement">
+            </Equipment>
+            <Equipment type="2097155" name="曲别针" resname="ClipElement">
+            </Equipment>
+            <Equipment type="2097168" name="阴极射线管(磁效应管)" resname="ShiCiXiaoYingYinJiSheXianGuanElement">
+            </Equipment>
+            <Equipment type="1638414" name="线框" resname="WireFrameElement">
+            </Equipment>
+            <Equipment type="2097201" name="电磁驱动演示器" resname="DianCiQuDongYanShiQi">
+            </Equipment>
+            <Equipment type="2162694" name="大线圈" resname="DaXianQuan">
+            </Equipment>
+            <Equipment type="2162695" name="小线圈" resname="XiaoXianQuan">
+            </Equipment>
+            <Equipment type="1286144" name="手摇发电机" resname="HandGeneratorElement">
+            </Equipment>
+            <Equipment type="2097157" name="绕线圈的铁钉" resname="CoilNailElement">
+            </Equipment>
+            <Equipment type="2097184" name="洛伦兹力演示仪" resname="LuoLunZiLiYanShiYi">
+            </Equipment>
+            <Equipment type="4277" name="示波器" resname="ShiBoQi" slaves="10001">
+            </Equipment>
+            <Equipment type="40002" name="锌板" resname="XinBanElement">
+            </Equipment>
+          </Equipments>
+        </Category>
+        <Category type="Mechanics" classificate="Physics" name="力学" categoryid="5">
+          <Equipments>	
+          	<Equipment type="4179" name="激光笔" resname="JiGuangBiElement">
+ 			</Equipment>
+          	<Equipment type="51039" name="尖嘴导管" resname="JianZuiDaoGuanElement">
+			</Equipment>		  
+			<Equipment type="51038" name="玻璃弯管" resname="BoliWanGuanElement">
+			</Equipment>		  
+			<Equipment type="51037" name="直导管" resname="ZhiDaoGuanElement">
+			</Equipment>		  		  
+			<Equipment type="50036" name="120°导管" resname="DaoGuan_120Element">
+			</Equipment>		  
+			<Equipment type="50035" name="90°导管" resname="DaoGuan_90Element">
+			</Equipment>		  
+			<Equipment type="50034" name="60°导管" resname="DaoGuan_60Element">
+			</Equipment>	  
+			<Equipment type="30003" name="受迫振动演示器" resname="ShouPoZhenDongYanShiQi">
+			</Equipment>
+            <Equipment type="51041" name="装有水的量筒" resname="LiangTong50mlElement">
+			</Equipment>
+			<Equipment type="30001" name="饮料瓶" resname="YinLiaoPing">
+            </Equipment>
+			<Equipment type="4297" name="发波水槽" resname="FaBoShuiCao">
+            </Equipment>
+            <Equipment type="3145781" name="纸带" resname="TickerTapeElement">
+            </Equipment>
+            <Equipment type="4174" name="杠杆平衡装置" resname="GangGanPingHengZhuangZhi">
+            </Equipment>
+			<Equipment type="4164" name="二力平衡的实验装置" resname="ErLiPingHengDeShiYanZhuangZhi">
+            </Equipment>
+            <Equipment type="3145760" name="文具袋" resname="WenJuDaiElement">
+            </Equipment>
+            <Equipment type="3145761" name="重锤" resname="ZhongChuiElement">
+            </Equipment>
+            <Equipment type="3145746" name="木块" resname="WoodBlock">
+            </Equipment>
+            <Equipment type="3145782" name="钩码" resname="GouMaElement">
+            </Equipment>
+            <Equipment type="3145749" name="小钢球" resname="XiaoGangQiu">
+            </Equipment>
+             <Equipment type="33333" name="桌子" resname="ZhuoZi">
+            </Equipment>
+            <Equipment type="3145783" name="带孔小钢球" resname="DaiKongXiaoGangQiu">
+            </Equipment>
+              <Equipment type="3145776" name="砝码盒" resname="FaMaHe" slaves="3145769">
+              </Equipment>
+
+            <Equipment type="3145780" name="细线" resname="XiXian">
+            </Equipment>
+            <Equipment type="3145777" name="小石块" resname="XiaoShiKuai">
+            </Equipment>
+            <Equipment type="4301" name="弯曲的轨道" resname="WanQuDeGuiDao">
+            </Equipment>
+            <Equipment type="3145766" name="受迫振动装置" resname="ShouPoZhenDongZhuangZhiElement">
+            </Equipment>
+            <Equipment type="2097408" name="铁架台" resname="TieJiaTaiElement">
+            </Equipment>
+            <Equipment type="3145792" name="铁夹" resname="TieJiaElement">
+            </Equipment>
+            <Equipment type="4157" name="弹簧测力计" resname="TanHuangCeLiJiElement">
+            </Equipment>
+            <Equipment type="4165" name="海绵" resname="HaiMian">
+            </Equipment>
+            <Equipment type="30002" name="单摆" resname="DanBai">
+            </Equipment>
+            <Equipment type="3145778" name="电磁打点计时器" resname="DianCiDaDianJiShiQiElement">
+            </Equipment>
+            <Equipment type="3145779" name="电火花打点计时器" resname="DianHuoHuaDaDianJiShiQiElement">
+            </Equipment>
+            <Equipment type="3145750" name="正方体铝块" resname="AlCubeBlock">
+            </Equipment>
+            <Equipment type="3145751" name="作业本" resname="ExerciseBook">
+            </Equipment>
+            <Equipment type="3145752" name="物理书" resname="PhysicalBook">
+            </Equipment>
+            <Equipment type="3145729" name="毫米刻度尺" resname="HaoMiKeDuChi">
+            </Equipment>
+            <Equipment type="3145763" name="金属挡板" resname="JinShuDangBan">
+            </Equipment>
+            <Equipment type="3145768" name="长木板" resname="ChangMuBan">
+            </Equipment>
+            <Equipment type="3145785" name="带刻度的斜面" resname="DaiKeDuDeXieMian">
+            </Equipment>
+            <Equipment type="3145784" name="带钩木块" resname="DaiGouMuKuai">
+            </Equipment>
+            <Equipment type="3145762" name="带斜面的方形台" resname="DaiXieMianDeFangXingTai">
+            </Equipment>
+            <Equipment type="3145748" name="斜面" resname="XieMianElement">
+            </Equipment>
+            <Equipment type="3145747" name="硬币" resname="YiYuanYingBiElement">
+            </Equipment>
+            <Equipment type="3145765" name="圆柱形铝块" resname="YuanZhuXingLvKuai">
+            </Equipment>
+            <Equipment type="4116" name="烧杯" resname="ShaoBeiElement">
+            </Equipment>
+            <Equipment type="4176" name="滑轮" resname="HuaLunElement">
+            </Equipment>
+            <Equipment type="4175" name="带直尺的铁架台" resname="DaiZhiChiDeTieJiaTaiElement">
+            </Equipment>
+            <Equipment type="4190" name="滑块" resname="HuaKuaiElement">
+            </Equipment>
+            <Equipment type="4141" name="机械停表" resname="JiXieTingBiaoElement">
+            </Equipment>
+            <Equipment type="4144" name="秒表" resname="MiaoBiaoElement">
+            </Equipment>
+            <Equipment type="4192" name="加重砝码" resname="JiaZhongFaMa">
+            </Equipment>
+            <Equipment type="4189" name="光电计时器" resname="GuangDianJiShiQiElement">
+            </Equipment>
+            <Equipment type="4188" name="气垫导轨" resname="QiDianDaoGui">
+            </Equipment>
+            <Equipment type="4173" name="斜槽" resname="XieCao">
+            </Equipment>
+            <Equipment type="4303" name="红蜡块运动演示器" resname="HongLaKuaiYunDongYanShiQi">
+            </Equipment>
+            <Equipment type="4298" name="毛钱管" resname="MaoQianGuan">
+            </Equipment>
+            <Equipment type="4294" name="注射器摆动装置" resname="ZhuSheQiBaiDongZhuangZhiElement">
+            </Equipment>
+            <Equipment type="4291" name="U型管压强计" resname="UXingGuanYaQiangJiElement">
+            </Equipment>
+            <Equipment type="4292" name="深筒杯" resname="ShenTongBeiElement">
+            </Equipment>
+            <Equipment type="4346" name="弹簧" resname="TanHuangElement">
+            </Equipment>
+            <Equipment type="4147" name="托盘天平" resname="TuoPanTianPing">
+            </Equipment>
+            <Equipment type="4293" name="托里拆利实验器" resname="TuoLiChaiLiShiYanQiElement">
+            </Equipment>
+            <Equipment type="4299" name="微小形变演示器" resname="WeiXiaoXingBianYanShiQiElement">
+            </Equipment>
+            <Equipment type="4200" name="游标卡尺" resname="YouBiaoKaChiElement">
+            </Equipment>
+            <Equipment type="4202" name="金属管" resname="JinShuGuan">
+            </Equipment>
+            <Equipment type="4296" name="长绳" resname="ChangShengElement">
+            </Equipment>
+            <Equipment type="4436" name="带支架的纸张" resname="ZhiJiaShangDeZhiZhangElement">
+            </Equipment>
+            <Equipment type="4203" name="平抛运动实验器" resname="PingPaoYunDongShiYanQiElement">
+            </Equipment>
+            <Equipment type="4195" name="带滑轮的长木板" resname="DaiHuaLunDeZhangMuBan">
+            </Equipment>
+            <Equipment type="3145731" name="小车" resname="XiaoChe">
+            </Equipment>
+            <Equipment type="4166" name="小铁桌" resname="XiaoTieZhuoElement">
+            </Equipment>
+            <Equipment type="4438" name="小车（带钩）">
+            </Equipment>
+            <Equipment type="4208" name="带铁钉的长木板" resname="DaiTieDingDeChangMuBan">
+            </Equipment>
+            <Equipment type="4149" name="橡皮" resname="XiangPiElement">
+            </Equipment>
+          	<Equipment type="4155" name="砝码盘" resname="FaMaPan">
+            </Equipment>
+          </Equipments>
+        </Category>
+        <Category type="Heat" classificate="Thermology" name="热学" categoryid="7">
+          <Equipments>
+          	<Equipment type="51039" name="尖嘴导管" resname="JianZuiDaoGuanElement">
+			</Equipment>	
+            <Equipment type="4144" name="秒表" resname="MiaoBiaoElement">
+            </Equipment>			
+			<Equipment type="51038" name="玻璃弯管" resname="BoliWanGuanElement">
+			</Equipment>		  
+			<Equipment type="51037" name="直导管" resname="ZhiDaoGuanElement">
+			</Equipment>		  		  
+			<Equipment type="50036" name="120°导管" resname="DaoGuan_120Element">
+			</Equipment>		  
+			<Equipment type="50035" name="90°导管" resname="DaoGuan_90Element">
+			</Equipment>		  
+			<Equipment type="50034" name="60°导管" resname="DaoGuan_60Element">
+			</Equipment>		
+			<Equipment type="4224" name="显微镜" resname="XianWeiJing">
+			</Equipment>	
+             <Equipment type="51042" name="量筒" resname="LiangTong10mlElement">
+			</Equipment>	  
+			<Equipment type="4234" name="日光灯启动器" resname="RiGuangDengQiDongQi">
+			</Equipment>
+			<Equipment type="4225" name="载物玻璃" resname="ZaiWuBoLi">
+			</Equipment>
+			<Equipment type="4226" name="盖玻片" resname="GaiBoPian">
+			</Equipment>
+			<Equipment type="4344" name="小磁体" resname="XiaoCiTi">
+			</Equipment>		  
+			<Equipment type="4343" name="感温铁氧体" resname="GanWenTieYangTi">
+			</Equipment>
+            <Equipment type="4345" name="电烙铁" resname="DianLaoTie">
+            </Equipment>		  
+			<Equipment type="4233" name="电加热器" resname="DianJiaReQi">
+			</Equipment>
+            <Equipment type="4229" name="缝衣针" resname="FengYiZhen">
+			</Equipment>
+          	<Equipment type="4228" name="涂蜂蜡的玻璃片" resname="TuFengLaDeBoLiPian">
+			</Equipment>
+			<Equipment type="4220" name="温度计" resname="WenDuJiElement">
+			</Equipment>
+           <Equipment type="4338" name="空气压缩引火仪" resname="KongQiYaSuoYinHuoYi">
+            </Equipment>
+            <Equipment type="4331" name="烧瓶夹" resname="ShaoPingJia">
+            </Equipment>
+            <Equipment type="4116" name="烧杯" resname="ShaoBeiElement">
+            </Equipment>
+            <Equipment type="4147" name="托盘天平" resname="TuoPanTianPing">
+            </Equipment>
+             <Equipment type="4221" name="带孔的硬纸板" resname="DaiKongDeYingZhiBan">
+            </Equipment>
+            <Equipment type="4227" name="气体实验定律演示器" resname="QiTiShiYanDingLvYanShiQi">
+            </Equipment>
+            <Equipment type="4341" name="做功改变物体内能装置" resname="ZuoGongGaiBianWuTiNeiNengZhuangZhi">
+            </Equipment>
+            <Equipment type="4232" name="肥皂液" resname="FeiZaoYe">
+            </Equipment>
+			<Equipment type="4210" name="玻璃板" resname="BoLiBanElement">
+            </Equipment>
+			<Equipment type="90001" name="浅盘" resname="QianPanElement">
+            </Equipment>
+            <Equipment type="4223" name="注射器" resname="ZhuSheQiElement">
+            </Equipment>
+			<Equipment type="40005" name="坐标纸" resname="ZuoBiaoZhiElement">
+            </Equipment>
+			<Equipment type="90002" name="涂蜡的玻璃板" resname="TuLaDeBoLiBan">
+            </Equipment>
+			<Equipment type="90003" name="涂蜂蜡的云母片" resname="TuFengLaDeYunMuPian">
+            </Equipment>
+			<Equipment type="90004" name="三脚架" resname="SanJiaoJia">
+            </Equipment>
+          </Equipments>
+        </Category>
+        <Category type="Sound" classificate="Acoustics" name="声学" categoryid="6">
+          <Equipments>
+            <Equipment type="4305" name="纸盒" resname="ZhiHe">
+            </Equipment>
+            <Equipment type="5242882" name="火柴盒" resname="HuoChaiHeElement">
+            </Equipment>
+            <Equipment type="5242881" name="火柴" resname="HuoChaiElement">
+            </Equipment>
+            <Equipment type="4307" name="闹钟" resname="NaoZhongElement">
+            </Equipment>
+            <Equipment type="4209" name="钢尺" resname="GangChiElement">
+            </Equipment>
+            <Equipment type="4315" name="蜂鸣器音调的变化" resname="XuanZhuanXiaoRen">
+            </Equipment>
+            <Equipment type="4314" name="竹竿" resname="ZhuGan">
+            </Equipment>
+            <Equipment type="4304" name="扬声器" resname="YangShengQi">
+            </Equipment>
+            <Equipment type="4306" name="音乐小人" resname="YinYueXiaoRen">
+            </Equipment>
+            <Equipment type="4311" name="钢琴" resname="GangQin">
+            </Equipment>
+            <Equipment type="4313" name="泡沫塑料块" resname="PaoMoSuLiaoKuaiElement">
+            </Equipment>
+            <Equipment type="4210" name="玻璃板" resname="BoLiBanElement">
+            </Equipment>
+            <Equipment type="4312" name="长笛" resname="ChangDiElement">
+            </Equipment>
+            <Equipment type="4310" name="乒乓球" resname="PingPangQiuElement">
+            </Equipment>
+            <Equipment type="4308" name="音叉" resname="YinChaElement">
+            </Equipment>
+            <Equipment type="4309" name="话筒" resname="HuaTongElement">
+            </Equipment>       
+            <Equipment type="80001" name="带乒乓球的铁架台" resname="DaiPingPangQiuDeTieJiaTai">
+            </Equipment>
+          </Equipments>
+        </Category>
+      </Categories>
+    </Subject>
+    <Subject type="Chemistry" name="化学">
+      <Categories>
+        <Category type="ContainerClass" classificate="Chemistry" name="容器类" categoryid="8">
+          <Equipments>		  
+			<Equipment type="51048" name="二氧化碳瓶盖" resname="ErYangHuaTanPingGai">
+			</Equipment>		  	  
+			<Equipment type="51047" name="二氧化碳瓶" resname="ErYangHuaTanPing">
+			</Equipment>
+            <Equipment type="4212" name="100ml锥形瓶" resname="ZhuiXingPing100mlElement">
+            </Equipment>
+            <Equipment type="4214" name="250ml锥形瓶" resname="ZhuiXingPing250mlElement">
+            </Equipment>
+          	<Equipment type="51042" name="量筒" resname="LiangTong10mlElement">
+			</Equipment>		  
+			<Equipment type="51041" name="装有水的量筒" resname="LiangTong50mlElement">
+			</Equipment>	
+          	<Equipment type="51040" name="圆底烧瓶" resname="YuanDiShaoPing">
+			</Equipment>	  
+            <Equipment type="51033" name="500ml烧杯" resname="ShaoBei_500ml">
+			</Equipment>		  
+			<Equipment type="51032" name="250ml烧杯" resname="ShaoBei_250ml">
+			</Equipment>		  
+			<Equipment type="51031" name="200ml烧杯" resname="ShaoBei_200ml">
+			</Equipment>		  
+			<Equipment type="51030" name="100ml烧杯" resname="ShaoBei_100ml">
+			</Equipment>		  
+			<Equipment type="51029" name="50ml烧杯" resname="ShaoBei_50ml">
+			</Equipment>		  
+			<Equipment type="51028" name="25ml烧杯" resname="ShaoBei_25ml">
+			</Equipment>
+            <Equipment type="680" name="表面皿" resname="BiaoMianMin">
+            </Equipment>
+            <Equipment type="50028" name="坩埚盖" resname="GanGuoGai">
+			</Equipment>	
+            <Equipment type="50029" name="玻璃塞" resname="BoLiSaiElement">
+			</Equipment>	
+            <Equipment type="50027" name="平底烧瓶" resname="PingDiShaoPing">
+            </Equipment>	
+          	<Equipment type="50026" name="具支试管" resname="JuZhiShiGuan">
+			</Equipment>	  	  
+		  	<Equipment type="50023" name="坩埚" resname="GanGuo">
+			</Equipment>
+			<Equipment type="90004" name="三脚架" resname="SanJiaoJia">
+            </Equipment>			  		  
+			<Equipment type="50019" name="球型分液漏斗" resname="QiuXingFenYeLouDou" slaves = "50020">
+			</Equipment>		  
+			<Equipment type="50018" name="长颈漏斗" resname="ChangJingLouDou">
+			</Equipment>		  
+			<Equipment type="50016" name="梨形分液漏斗" resname="LiXingFenYeLouDou" slaves = "50017">
+			</Equipment>		  
+			<Equipment type="50015" name="称量纸" resname="ChengLiangZhi">
+			</Equipment>
+            <Equipment type="4116" name="烧杯" resname="ShaoBeiElement">
+            </Equipment>
+            <Equipment type="4160" name="酒精灯" resname="JiuJingDengElement">
+            </Equipment>
+            <Equipment type="4161" name="酒精灯帽" resname="JiuJingDengMaoElement">
+            </Equipment>
+            <Equipment type="4379" name="广口瓶" resname="GuangKouPingElement">
+            </Equipment>
+            <Equipment type="4380" name="广口瓶盖" resname="GuangKouPingGaiElement">
+            </Equipment>
+            <Equipment type="4162" name="试管" resname="ShiGuanElement">
+            </Equipment>
+			 <Equipment type="50008" name="pH试纸盒" resname="PHShiZhiHeElement">
+            </Equipment>
+			<Equipment type="50009" name="pH试纸" resname="PHShiZhiElement">
+            </Equipment>
+			<Equipment type="55000" name="滤纸" resname="LvZhiElement">
+            </Equipment>
+			<Equipment type="55001" name="砂纸" resname="ShaZhiElement">
+            </Equipment>
+            <Equipment type="4211" name="玻璃水槽" resname="BoLiShuiCaoElement">
+            </Equipment>
+            <Equipment type="561" name="升降台" resname="ShengJiangTaiElement">
+            </Equipment>
+            <Equipment type="560" name="棉花" resname="MianHuaElement">
+            </Equipment>
+            <Equipment type="4342" name="集气瓶" resname="JiQiPingElement">
+            </Equipment>
+            <Equipment type="7340033" name="带导管橡胶塞" resname="DaiDaoGuanXiangJiaoSElement">
+            </Equipment>
+            <Equipment type="50001" name="试管铁夹" resname="ShiGuanTieJiaElement">
+            </Equipment>
+            <Equipment type="2097408" name="铁架台" resname="TieJiaTaiElement">
+            </Equipment>
+            <Equipment type="548" name="木条" resname="MuTiaoElement">
+            </Equipment>
+			<Equipment type="573" name="蒸发皿" resname="ZhengFaMinElement">
+            </Equipment>
+			<Equipment type="4201" name="胶头滴管" resname="JiaoTouDiGuanElement">
+            </Equipment>
+			<Equipment type="50004" name="生锈的铁钉" resname="ShengXiuDeTieDingElement">
+            </Equipment>
+			<Equipment type="50005" name="镊子" resname="NieZiElement">
+            </Equipment>
+			<Equipment type="553" name="试管夹" resname="ShiGuanJiaElement">
+            </Equipment>
+			<Equipment type="563" name="坩埚钳" resname="GanGuoQianElement">
+            </Equipment>
+			<Equipment type="50007" name="纸槽" resname="ZhiCaoElement">
+            </Equipment>
+			<Equipment type="545" name="橡皮塞" resname="XiangPiSaiElement">
+            </Equipment>
+			<Equipment type="50014" name="橡胶管" resname="XiangJiaoGuanElement">
+            </Equipment>
+			<Equipment type="4146" name="玻璃导管" resname="BoLiDaoGuanElement">
+            </Equipment>		
+			<Equipment type="862" name="细口瓶" resname="XiKouPingElement">
+            </Equipment>
+            <Equipment type="50030" name="培养皿" resname="PeiYangMinElement">
+            </Equipment>
+            <Equipment type="50031" name="培养皿盖" resname="PeiYangMinGaiElement">
+            </Equipment>
+			<Equipment type="567" name="网罩" resname="WangZhaoElement">
+            </Equipment>	
+			<Equipment type="50010" name="滴瓶" resname="DiPingElement">
+            </Equipment>
+			<Equipment type="50011" name="滴瓶滴管" resname="DiPingDiGuanElement">
+            </Equipment>
+			<Equipment type="50012" name="化学玻璃棒" resname="BoLiBangElement">
+            </Equipment>
+			<Equipment type="4363" name="漏斗" resname="LouDouElement">
+            </Equipment>
+			<Equipment type="4163" name="石棉网" resname="ShiMianWangElement">
+            </Equipment>
+			<Equipment type="50077" name="铁圈" resname="TieQuanElement">
+            </Equipment>
+
+			<Equipment type="50078" name="化学铁架台" resname="HuaXueTieJiaTaiElement">
+            </Equipment>	
+            <Equipment type="55004" name="燃烧匙" resname="RanShaoShiElement">
+            </Equipment>
+            <Equipment type="55005" name="化学注射器" resname="HuaXueZhuSheQiElement">
+            </Equipment>	
+            <Equipment type="55006" name="酒精喷灯" resname="JiuJingPenDengElement">
+            </Equipment>			
+          </Equipments>
+        </Category>
+        <Category type="MeteringClass" classificate="Chemistry" name="计量类" categoryid="8">
+          <Equipments>
+            <Equipment type="4147" name="托盘天平" resname="TuoPanTianPing">
+            </Equipment>
+			<Equipment type="50099" name="试管架" resname="ShiGuanShellElement">
+            </Equipment>
+            <Equipment type="4122" name="药匙" resname="YaoChiElement">
+            </Equipment>
+			<Equipment type="4831" name="玻璃片" resname="BoLiPianElement">
+            </Equipment>
+			<Equipment type="50079" name="镁条" resname="MeiTiaoElement">
+            </Equipment>
+			<Equipment type="55002" name="铜丝" resname="TongSiElement">
+            </Equipment>
+			<Equipment type="55003" name="锌粒" resname="XinLiElement">
+            </Equipment>
+			<Equipment type="50089" name="铁丝" resname="TieSiElement">
+            </Equipment>
+          </Equipments>
+        </Category>
+        <Category type="Auxiliary" name="辅助类" categoryid="x">
+          <Equipments>	
+            <Equipment type="4179" name="激光笔" resname="JiGuangBiElement">
+ 			</Equipment>
+          	<Equipment type="51039" name="尖嘴导管" resname="JianZuiDaoGuanElement">
+			</Equipment>		  
+			<Equipment type="51038" name="玻璃弯管" resname="BoliWanGuanElement">
+			</Equipment>		  
+			<Equipment type="51037" name="直导管" resname="ZhiDaoGuanElement">
+			</Equipment>		  		  
+			<Equipment type="50036" name="120°导管" resname="DaoGuan_120Element">
+			</Equipment>		  
+			<Equipment type="50035" name="90°导管" resname="DaoGuan_90Element">
+			</Equipment>		  
+			<Equipment type="50034" name="60°导管" resname="DaoGuan_60Element">
+			</Equipment>	  
+			<Equipment type="50024" name="泥三角" resname="NiSanJiao">
+            </Equipment>
+			<Equipment type="50038" name="硬质玻璃管" resname="YingZhiBoLiGuanElement">
+            </Equipment>
+            <Equipment type="50022" name="小刀" resname="XiaoDao">
+			</Equipment>		
+			<Equipment type="50021" name="止水夹" resname="ZhiShuiJia">
+			</Equipment>
+            <Equipment type="50025" name="试管刷" resname="ShiGuanShua">
+			</Equipment>	
+            <Equipment type="51043" name="硬纸圈" resname="YingZhiQuan">
+			</Equipment>
+            <Equipment type="1357" name="阶梯状铝片" resname="JieTiZhuangLvPian">
+            </Equipment>
+            <Equipment type="544" name="洗瓶" resname="XiPing">
+            </Equipment>
+          </Equipments>
+        </Category>
+        <Category type="Supplies" classificate="Chemistry" name="其它用品" categoryid="8">
+          <Equipments>
+            <!--<Equipment type="Test" name="测试"></Equipment>-->
+          </Equipments>
+        </Category>
+        <Category type="Liquid" classificate="Chemistry" name="液体" categoryid="8">
+          <Equipments>		  
+            <!--<Equipment type="Test" name="测试"></Equipment>-->
+          </Equipments>
+        </Category>
+        <Category type="Gas" classificate="Chemistry" name="气体" categoryid="8">
+          <Equipments>
+            <!--<Equipment type="Test" name="测试"></Equipment>-->
+          </Equipments>
+        </Category>
+        <Category type="Solid" classificate="Chemistry" name="固体" categoryid="8">
+          <Equipments>		  
+			<Equipment type="51046" name="黄铜片" resname="HuangTongPian">
+			</Equipment>		  
+			<Equipment type="51045" name="铜片" resname="TongPian">
+			</Equipment>
+            <!--<Equipment type="Test" name="测试"></Equipment>-->
+          </Equipments>
+        </Category>
+      </Categories>
+    </Subject>
+  </Subjects>
+</EquipmentsCategory>
