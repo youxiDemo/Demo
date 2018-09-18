@@ -174,46 +174,47 @@ function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strPa
 	-- 		self:ITween()
 	-- 	end
 	-- end
+	-- Util.LogError(" **************self.isBool****************" .. tostring(self.isBool))
+	-- Util.LogError(" **************self.isBool2****************" .. tostring(self.isBool2))
+	-- Util.LogError(" **************self.isBool3****************" .. tostring(self.isBool3))
+
 	
 	if objPath == self.ModelPath["A"] then
-		local pos = self.Transform:GetChildEulerAngles(objPath,true)
-		if not self.isBool then
-			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 20, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", true)
-			self.isBool = true
+		if self.isBool then
+			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", false)
+			self.isBool = false
 			print("    按钮调试 A  false  ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
 			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", true)
-			self.isBool = false
+			self.isBool = true
 			print("    按钮调试 A  true  ")
 		end
 		
 	elseif objPath == self.ModelPath["B"] then
-		local pos = self.Transform:GetChildEulerAngles(objPath,true)
-		if not self.isBool2 then
+		if self.isBool2 then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
 			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", false)
-			self.isBool2 = true
+			self.isBool2 = false
 			print("    按钮调试 B  false  ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
 			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", true)
-			self.isBool2 = false
+			self.isBool2 = true
 			print("    按钮调试 B  true  ")
 		end
 	
 	elseif objPath == self.ModelPath["C"] then
-		local pos = self.Transform:GetChildEulerAngles(objPath,true)
-		if not self.isBool3 then
+		if self.isBool3 then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
 			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", false)
-			self.isBool3 = true
+			self.isBool3 = false
 			print("    按钮调试  C  false ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
 			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", true)
-			self.isBool3 = false
+			self.isBool3 = true
 			print("    按钮调试 C  true ")
 		end
 	
