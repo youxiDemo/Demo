@@ -264,16 +264,22 @@ function TableElementAgent:LinkElements()
 							,self.PostTable[tostring(CircuitElementType.SwitchSPST)][1]["id"],self.PostTable[tostring(CircuitElementType.SwitchSPST)][1]["port"],2)
 	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.SwitchSPST)][2]["id"],self.PostTable[tostring(CircuitElementType.SwitchSPST)][2]["port"] --开关--宝箱
 							,self.PostTable[tostring(CircuitElementType.BoxDemo)][2]["id"],self.PostTable[tostring(CircuitElementType.BoxDemo)][2]["port"],3)
+
 	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.BoxDemo)][3]["id"],self.PostTable[tostring(CircuitElementType.BoxDemo)][3]["port"] --宝箱--单刀双掷开关
-							,self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][1]["id"],self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][1]["port"],4)
+							,self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][2]["id"],self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][2]["port"],4)
+
 	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.BoxDemo)][4]["id"],self.PostTable[tostring(CircuitElementType.BoxDemo)][4]["port"]  --宝箱--灯泡3
 							,self.PostTable[tostring(CircuitElementType.Lamp)][3][2]["id"],self.PostTable[tostring(CircuitElementType.Lamp)][3][2]["port"],5)
+
 	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.BoxDemo)][3]["id"],self.PostTable[tostring(CircuitElementType.BoxDemo)][3]["port"]  --宝箱--灯泡1
 							,self.PostTable[tostring(CircuitElementType.Lamp)][1][2]["id"],self.PostTable[tostring(CircuitElementType.Lamp)][1][2]["port"],6)
-	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][3]["id"],self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][3]["port"]  --单刀双掷开关--灯泡1
-							,self.PostTable[tostring(CircuitElementType.Lamp)][1][1]["id"],self.PostTable[tostring(CircuitElementType.Lamp)][1][1]["port"],7)
-	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][2]["id"],self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][2]["port"]  --单刀双掷开关--灯泡2
-							,self.PostTable[tostring(CircuitElementType.Lamp)][2][1]["id"],self.PostTable[tostring(CircuitElementType.Lamp)][2][1]["port"],8)
+
+	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][1]["id"],self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][1]["port"]  --单刀双掷开关--灯泡2
+							,self.PostTable[tostring(CircuitElementType.Lamp)][2][1]["id"],self.PostTable[tostring(CircuitElementType.Lamp)][2][1]["port"],7)
+
+	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][3]["id"],self.PostTable[tostring(CircuitElementType.DoubleThrowSwitch)][3]["port"]  --单刀双掷开关--机关门
+							,self.PostTable[tostring(CircuitElementType.JiGuanMenElement)][1]["id"],self.PostTable[tostring(CircuitElementType.JiGuanMenElement)][1]["port"],8)
+
 	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.JiGuanMenElement)][1]["id"],self.PostTable[tostring(CircuitElementType.JiGuanMenElement)][1]["port"]  --机关门--灯泡1
 							,self.PostTable[tostring(CircuitElementType.Lamp)][1][1]["id"],self.PostTable[tostring(CircuitElementType.Lamp)][1][1]["port"],9)
 	self:WirePostEngineLink(self.PostTable[tostring(CircuitElementType.JiGuanMenElement)][1]["id"],self.PostTable[tostring(CircuitElementType.JiGuanMenElement)][1]["port"]  --机关门--灯泡2

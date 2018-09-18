@@ -173,11 +173,11 @@ function DoubleThrowSwitchAgent:OnAbsorbToParentCallback(selfId, selfPath, other
 	end 
 	local element = LabElementManager.GetElement(otherId)
 	if element.elementType == CircuitElementType.TableElement then 
-		local portTable = {{["id"] = switchID1,["port"] = self.enginePortTable1[2]},
-							{["id"] = switchID1,["port"] = self.enginePortTable1[1]},
-							{["id"] = switchID2,["port"] = self.enginePortTable2[1]}}
+		local portTable = {{["id"] = self.switchID1,["port"] = self.enginePortTable1[2]},
+							{["id"] = self.switchID1,["port"] = self.enginePortTable1[1]},
+							{["id"] = self.switchID2,["port"] = self.enginePortTable2[1]}}
 		if  element:LinkToTable(self,portTable) then 
-			self:LBADeleteInteractive(InteractiveACType.Drag,self.MoveId)
+			self:LBADeleteInteractive(InteractiveACType.Drag,self.moveId)
 			self:LBADeleteInteractive(InteractiveACType.Click,self.clickId)
 			self:LBADeleteInteractive(InteractiveACType.DoubleClick,self.doubleClickId)
 		end

@@ -4,7 +4,7 @@ LampAgent:AddBaseLogic(CircuitElementBaseLogic:New())
 
 --==========数据配置=============
 LampAgent.elementType = CircuitElementType.Lamp
-LampAgent.brokenRatio = 2	--损坏判断系数
+LampAgent.brokenRatio = 20	--损坏判断系数
 LampAgent.delayBrokenTime = 0.3
 
 

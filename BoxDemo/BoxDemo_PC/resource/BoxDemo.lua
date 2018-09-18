@@ -96,7 +96,7 @@ function BoxDemoAgent:InitData(paramsTable)
 	--和引擎能力 Component 绑定
 	self.CiruiteElementSet:InitType("PowerAction")
 	self.CiruiteElementSet:AddComponent("PowerAction", PowerAcId)
-	self.CiruiteElementSet:Set(tostring(PowerAcId),"Voltage",3)
+
 
 	--开关
 	self.CiruiteElementSet:InitType("SwitchAction")
@@ -107,7 +107,7 @@ function BoxDemoAgent:InitData(paramsTable)
 	--电阻
 	self.CiruiteElementSet:InitType("ResistorAction")
 	self.CiruiteElementSet:AddComponent("ResistorAction", Resistor1)
-	self.CiruiteElementSet:Set(Resistor1,"Resistance",0.1)
+
 	--电源
 
 	self.CiruiteElementSet:BindAttrChangeFunction(Resistor1,BoxDemoAgent.ValueChangeCallback)
@@ -140,18 +140,23 @@ function BoxDemoAgent:InitData(paramsTable)
 						{ ["id"] = SwitchId3, ["port"] = tSwitchId3[2] }
 					 }
 
-	self.tSwitchId1 = tSwitchId1
-	self.tSwitchId2 = tSwitchId2
-	self.tSwitchId3 = tSwitchId3
+	self.SwitchId1 = SwitchId1
+	self.SwitchId2 = SwitchId2
+	self.SwitchId3 = SwitchId3
 
-	self.CiruiteElementSet:Set(tostring(tSwitchId1), "isOpen", false)
-	self.CiruiteElementSet:Set(tostring(tSwitchId2), "isOpen", false)
-	self.CiruiteElementSet:Set(tostring(tSwitchId3), "isOpen", false)
-
+	self.CiruiteElementSet:Set(tostring(SwitchId1), "isOpen", false)
+	self.CiruiteElementSet:Set(tostring(SwitchId2), "isOpen", false)
+	self.CiruiteElementSet:Set(tostring(SwitchId3), "isOpen", false)
+	self.CiruiteElementSet:Set(tostring(PowerAcId),"Voltage",10)
+	self.CiruiteElementSet:Set(Resistor1,"Resistance",0.1)
 	self.Resistor1 = Resistor1
 
 
 	self.isBoxOpen = false
+
+	self.isBool = false
+	self.isBool2 = false
+	self.isBool3 = false
 	--初始化场景对象
 	-- self:LBABaseInit(paramsTable)
 end
@@ -172,34 +177,46 @@ function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strPa
 	
 	if objPath == self.ModelPath["A"] then
 		local pos = self.Transform:GetChildEulerAngles(objPath,true)
-		if pos.y >= 1 then
-			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.tSwitchId1), "isOpen", false)
+		if not self.isBool then
+			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 20, 0), true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", true)
+			self.isBool = true
+			print("    按钮调试 A  false  ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.tSwitchId1), "isOpen", true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", true)
+			self.isBool = false
+			print("    按钮调试 A  true  ")
 		end
-		print("    按钮调试 A   ")
+		
 	elseif objPath == self.ModelPath["B"] then
 		local pos = self.Transform:GetChildEulerAngles(objPath,true)
-		if pos.y >= 1 then
+		if not self.isBool2 then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.tSwitchId2), "isOpen", false)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", false)
+			self.isBool2 = true
+			print("    按钮调试 B  false  ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.tSwitchId2), "isOpen", true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", true)
+			self.isBool2 = false
+			print("    按钮调试 B  true  ")
 		end
-		print("    按钮调试  B  ")
+	
 	elseif objPath == self.ModelPath["C"] then
 		local pos = self.Transform:GetChildEulerAngles(objPath,true)
-		if pos.y >= 1 then
+		if not self.isBool3 then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.tSwitchId3), "isOpen", false)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", false)
+			self.isBool3 = true
+			print("    按钮调试  C  false ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.tSwitchId3), "isOpen", true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", true)
+			self.isBool3 = false
+			print("    按钮调试 C  true ")
 		end
-		print("    按钮调试 C   ")
+	
 	end
 end
 

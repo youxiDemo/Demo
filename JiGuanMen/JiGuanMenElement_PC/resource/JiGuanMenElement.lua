@@ -98,16 +98,25 @@ end
 -- 初始化数据
 function JiGuanMenElementAgent:InitData(entityId,paramsTable)
 	self:SetDianChiColor(4,"Red")
-
 	--向引擎请求相应创建对象
 	local engineElementId = self:CreateCircuitComponent(EngineCircuitComponentType.Resistor)
-	self.CiruiteElementSet:InitType("ResistorAction")
-	self.CiruiteElementSet:AddComponent("ResistorAction", engineElementId)
-	--电阻1
-	local tResistor1 = self.CiruiteElementSet:GetPortIDs(engineElementId)
-	tResistor1 = CSArrayToLuaArray(tResistor1,2)
-	self.portTable = {  { ["id"] = engineElementId, ["port"] = tResistor1[1] },
-						{ ["id"] = engineElementId, ["port"] = tResistor1[2] },
+
+	--和引擎能力 Component 绑定
+	self.ResistorAction:BindComponent(engineElementId)
+
+	--初始化接线柱能力
+	local enginePortTable = self.ResistorAction.PortIDs
+	enginePortTable = CSArrayToLuaArray(enginePortTable,2)
+	
+	-- --向引擎请求相应创建对象
+	-- local engineElementId = self:CreateCircuitComponent(EngineCircuitComponentType.Resistor)
+	-- self.CiruiteElementSet:InitType("ResistorAction")
+	-- self.CiruiteElementSet:AddComponent("ResistorAction", engineElementId)
+	-- --电阻1
+	-- local tResistor1 = self.CiruiteElementSet:GetPortIDs(engineElementId)
+	-- tResistor1 = CSArrayToLuaArray(tResistor1,2)
+	self.portTable = {  { ["id"] = engineElementId, ["port"] = enginePortTable[1] },
+						{ ["id"] = engineElementId, ["port"] = enginePortTable[2] },
 					 }
 	self.CiruiteElementSet:BindAttrChangeFunction(engineElementId,JiGuanMenElementAgent.ValueChangeCallback)
 
