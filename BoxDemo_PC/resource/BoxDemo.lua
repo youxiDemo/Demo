@@ -97,7 +97,7 @@ function BoxDemoAgent:InitData(paramsTable)
 	self.CiruiteElementSet:InitType("PowerAction")
 	self.CiruiteElementSet:AddComponent("PowerAction", PowerAcId)
 
-
+	-- Util.LogError(" ***----------*SwitchId1***" ..tostring(SwitchId1))
 	--开关
 	self.CiruiteElementSet:InitType("SwitchAction")
 	self.CiruiteElementSet:AddComponent("SwitchAction", SwitchId1)
@@ -143,10 +143,10 @@ function BoxDemoAgent:InitData(paramsTable)
 	self.SwitchId1 = SwitchId1
 	self.SwitchId2 = SwitchId2
 	self.SwitchId3 = SwitchId3
-
-	self.CiruiteElementSet:Set(tostring(SwitchId1), "isOpen", false)
-	self.CiruiteElementSet:Set(tostring(SwitchId2), "isOpen", false)
-	self.CiruiteElementSet:Set(tostring(SwitchId3), "isOpen", false)
+	-- Util.LogError(" ******SwitchId1***" ..tostring(SwitchId1))
+	self.CiruiteElementSet:Set(tostring(SwitchId1), "isOpen", true)
+	self.CiruiteElementSet:Set(tostring(SwitchId2), "isOpen", true)
+	self.CiruiteElementSet:Set(tostring(SwitchId3), "isOpen", true)
 	self.CiruiteElementSet:Set(tostring(PowerAcId),"Voltage",10)
 	self.CiruiteElementSet:Set(Resistor1,"Resistance",0.1)
 	self.Resistor1 = Resistor1
@@ -182,12 +182,12 @@ function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strPa
 	if objPath == self.ModelPath["A"] then
 		if self.isBool then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", false)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", true)
 			self.isBool = false
 			print("    按钮调试 A  false  ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId1), "isOpen", false)
 			self.isBool = true
 			print("    按钮调试 A  true  ")
 		end
@@ -195,12 +195,12 @@ function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strPa
 	elseif objPath == self.ModelPath["B"] then
 		if self.isBool2 then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", false)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", true)
 			self.isBool2 = false
 			print("    按钮调试 B  false  ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId2), "isOpen", false)
 			self.isBool2 = true
 			print("    按钮调试 B  true  ")
 		end
@@ -208,12 +208,12 @@ function BoxDemoAgent:OnEntireClick( objPath,eventType,screenPos,worldPos, strPa
 	elseif objPath == self.ModelPath["C"] then
 		if self.isBool3 then
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, 0, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", false)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", true)
 			self.isBool3 = false
 			print("    按钮调试  C  false ")
 		else
 			self.Transform:SetChildEulerAngles(objPath,Vector3(0, -20, 0), true)
-			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", true)
+			self.CiruiteElementSet:Set(tostring(self.SwitchId3), "isOpen", false)
 			self.isBool3 = true
 			print("    按钮调试 C  true ")
 		end
